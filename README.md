@@ -1,2 +1,1 @@
 # icmForUs
-<p>Hi</p>

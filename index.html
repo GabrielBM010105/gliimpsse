@@ -36,11 +36,11 @@
             color: black;
         }
 
-      .main {
-    padding: 0px 10px;
-    margin-bottom: 60px; /* Adjust for the height of the sidebar */
-}
-
+        .main {
+            flex: 1;
+            padding: 16px;
+            margin-top: 60px; /* Adjusted margin to account for navbar */
+        }
 
         .line {
             display: flex;
@@ -119,20 +119,19 @@
             padding: 0 30px; /* Add padding to prevent the search bar from touching the edge */
         }
 
-
-
         .main {
     margin-right: 0; /* No margin needed as sidebar is at the bottom now */
     font-size: 28px;
     padding: 0px 10px;
 }
 
-/* Sidebar as footer */
+
+ /* Top navigation acting as a header */
 .sidenav {
-    height: auto; /* Auto height to accommodate content */
+    height: auto; /* Auto height to fit content */
     width: 100%; /* Full width */
-    position: fixed; /* Fixed positioning */
-    bottom: 0; /* Positioned at the bottom */
+    position: fixed; /* Fixed positioning at the top */
+    top: 0; /* Positioned at the very top */
     left: 0;
     background-color: #111;
     overflow-x: hidden;
@@ -140,7 +139,7 @@
     display: flex;
     justify-content: space-around; /* Space items horizontally */
     align-items: center; /* Center items vertically */
-    z-index: 1000; /* Ensure it is on top */
+    z-index: 1000; /* Make sure it's on top of other content */
 }
 
 /* Sidebar links */
@@ -158,11 +157,10 @@
     color: #f1f1f1;
 }
 
-/* Ensure main content is not covered by footer */
+/* Ensure the rest of the page is not covered by top navigation */
 body {
-    padding-bottom: 60px; /* Adjust based on sidebar height */
+    padding-top: 60px; /* Adjust based on sidebar height */
 }
-
 
 
 
@@ -314,3 +312,4 @@ body {
 
 </body>
 </html>
+

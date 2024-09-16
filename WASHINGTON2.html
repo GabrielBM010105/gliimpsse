@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: 'Arial Rounded MT Bold', 'Arial', sans-serif;
+            background-color: #ebe9e1;
+            /*background: linear-gradient(to bottom, #ebe9e1, #e8e7e6);*/
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navbar a:hover {
+            background: #ddd;
+            color: black;
+        }
+
+        .main {
+            flex: 1;
+            padding: 16px;
+            margin-top: 60px; /* Adjusted margin to account for navbar */
+        }
+
+        .line {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 10px 0; /* Reduced padding to minimize space */
+        }
+
+        .left {
+            text-align: left;
+            padding-left: 30px;
+            flex: 1;
+        }
+
+        .right {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-basis: 60%; /* Set the width of the image container */
+        }
+
+        .right img {
+            max-width: 90%;
+            height: auto;
+            margin-right: 10%;
+            margin-top: 3%;
+            border: 1px solid #333;
+        }
+
+        .left p {
+            margin: 5px 0; /* Reduced margins to decrease space between paragraphs */
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.4), transparent);
+            margin: 20px 0; /* Adds some spacing above and below the line */
+        }
+
+        footer {
+            background: linear-gradient(to left, #f95ca4, #ed7845);
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center; /* Centers the links horizontally */
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .nav h3 {
+            margin: 0 23px; /* Adds space between the headers */
+            cursor: pointer;
+        }
+
+        /* Apply gradient to the h1 text */
+        h1 {
+            font-size: 500%;
+            margin-left: 5%;
+            background: linear-gradient(to bottom, #f95ca4, #ed7845); /* Gradient from light to normal pink */
+            -webkit-background-clip: text;
+            color: transparent; /* Set the text color to transparent to allow background-clip to work */
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px; /* Add padding to prevent the search bar from touching the edge */
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 120px; /* Make the sidebar narrower */
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        .sidenav a {
+            padding: 10px;
+            text-decoration: none;
+            font-size: 15px;
+            color: #818181;
+            display: block;
+            text-align: center; /* Center the text */
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .main {
+            margin-right: 120px; /* Adjust to account for the narrower sidebar */
+            font-size: 28px;
+            padding: 0px 10px;
+        }
+
+        .sidenav a i {
+            margin-right: 10px; /* Space between icon and text */
+        }
+
+        .sidenav a {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centers both icon and text */
+            padding: 10px;
+        }
+
+
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+            /* Center website */
+    .main {
+    max-width: 1000px;
+    margin: auto;
+    }
+
+    .row {
+    margin: 2px 40px;
+    }
+
+    /* Add padding BETWEEN each column */
+    .row,
+    .row > .column {
+    padding: 15px;
+    }
+
+    /* Create four equal columns that floats next to each other */
+    .column {
+    float: left;
+    width: 25%;
+    }
+
+    /* Clear floats after rows */ 
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+
+    /* Content */
+    .content {
+    background-color: white;
+    padding: 10px;
+    }
+
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @media screen and (max-width: 10000px) {
+    .column {
+        width: 50%;
+    }
+    }
+
+        /* Center website */
+    .main {
+    max-width: 1000px;
+    margin: auto;
+    }
+
+    * {
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row2 {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 8px;
+  padding-left: 32px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column2 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 20px;
+}
+
+.column2 img {
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 100%;
+        border: 2px solid black; /* Narrow black border */
+        margin-bottom: 10px; /* Adds space between the images */
+    }
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 9000px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+</style>
+</head>
+
+</head>
+<body>
+
+    <h1>icmForUs</h1>
+
+    <div class="header-container">
+        <!-- Navigation -->
+        <div class="nav">
+            <h3><a href="NEWDESIGN.html" style="text-decoration: none; color: #000000;">NEWS</a></h3>
+            <h3><a href="TECHME.html" style="text-decoration: none; color: #000000;">TECH</a></h3>
+            <h3><a href="PHOTOGAL.html" style="text-decoration: none; color: #000000;">PORTFOLIO</a></h3>
+            <h3><a href="BOOKINGS.html" style="text-decoration: none; color: #000000;">BOOKINGS</a></h3>
+        </div>
+         
+    </div>
+
+    <div class="sidenav">
+        <a href="index.html">Home</a>
+        <a href="CONTACTME2.html">About</a>
+        <a href="CONTACTMEE.html">Contact</a>
+        <a href="https://www.instagram.com/icmforus/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/icmforus" target="_blank"><i class="fa-brands fa-x-twitter"></i></i></a>
+        <a href="https://www.youtube.com/@icmForUs" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+    <h1 style="font-size: 30px; color: #000000;">Washington, DC</h1>
+    <p style="font-size: 16px; padding-left: 73px;">July 16, 2024</p></a>
+
+    <!-- Portfolio Gallery Grid -->
+    <div class="row">
+        <div class="column">
+          <div class="content">
+            <h3>About The Event</h3>
+            <p style="font-size: 15px;">A collection of graduation photos taken in Washington, DC, highlighting graduates in iconic settings around the city. These images capture the joy and accomplishment of each graduate against the backdrop of the nation’s capital.</p>
+            <h3>Credits</h3>
+            <p style="font-size: 15px;">Gabriel Menghisteab</p>
+              
+      </div>
+      <!-- END GRID -->
+      </div>
+      
+      <!-- END MAIN -->
+      </div>
+
+    <body>
+        
+        <!-- Photo Grid -->
+<div class="row2"> 
+    <div class="column2">
+      <img src="DC18.JPG" style="width:100%">
+      <img src="DC16.JPG" style="width:100%">
+      <img src="DC5.JPG" style="width:100%">
+      <img src="DC3.JPG" style="width:100%">
+      <img src="21.JPG" style="width:100%">
+    </div>
+    <div class="column2">
+      <img src="DC6.JPG" style="width:100%">
+      <img src="DC17.JPG" style="width:100%">
+      <img src="DC9.JPG" style="width:100%">
+      <img src="19.JPG" style="width:100%">
+      <img src="22.JPG" style="width:100%">
+    </div>  
+    <div class="column2">
+      <img src="DC15.JPG" style="width:100%">
+      <img src="DC4.JPG" style="width:100%">
+      <img src="DC7.JPG" style="width:100%">
+      <img src="24.JPG" style="width:100%">
+      <img src="23.JPG" style="width:100%">
+    </div>
+  </div>
+  
+        
+        </body>
+
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            /* Your existing styles */
+        </style>
+        <script src="https://kit.fontawesome.com/7541ffbdd1.js" crossorigin="anonymous"></script>
+    </head>
+    
+
+</body>
+</html>

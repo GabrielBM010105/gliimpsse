@@ -120,24 +120,24 @@
         }
 
 .sidenav {
-    height: 60px; /* Adjust height as needed */
-    width: 100%;
-    position: fixed;
-    bottom: 0;
+    height: auto; /* Adjust height automatically based on content */
+    width: 100%; /* Full width */
+    position: fixed; /* Fixed position at the bottom */
+    bottom: 0; /* Align to the bottom of the viewport */
+    left: 0; /* Align to the left edge */
     background-color: #111;
-    overflow-x: auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px 0;
-    z-index: 1;
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: space-around; /* Distribute space evenly */
+    align-items: center; /* Center items vertically */
+    padding: 10px 0; /* Padding for space inside the footer */
+    z-index: 10; /* Ensure it’s above other content */
 }
 
 .sidenav a {
-    padding: 10px;
     text-decoration: none;
     font-size: 15px;
     color: #818181;
+    display: block;
     text-align: center;
 }
 
@@ -145,11 +145,11 @@
     color: #f1f1f1;
 }
 
+.sidenav i {
+    margin-right: 5px; /* Adjust space between icon and text */
+}
 
 
-        .sidenav a:hover {
-            color: #f1f1f1;
-        }
 
         .main {
     margin-right: 0; /* No margin needed as sidebar is at the bottom now */

@@ -36,11 +36,11 @@
             color: black;
         }
 
-        .main {
-            flex: 1;
-            padding: 16px;
-            margin-top: 60px; /* Adjusted margin to account for navbar */
-        }
+      .main {
+    padding: 0px 10px;
+    margin-bottom: 60px; /* Adjust for the height of the sidebar */
+}
+
 
         .line {
             display: flex;
@@ -119,26 +119,29 @@
             padding: 0 30px; /* Add padding to prevent the search bar from touching the edge */
         }
 
-        .sidenav {
+.sidenav {
     height: auto; /* Adjust height to fit content */
-    width: 120px; /* Width of the sidebar */
+    width: 100%; /* Full width to span the bottom */
     position: fixed;
     bottom: 0; /* Stick to the bottom */
-    right: 0;
+    left: 0; /* Align to the left edge */
     background-color: #111;
     overflow-x: hidden;
-    padding: 10px 0; /* Adjusted for padding */
+    padding: 10px 0; /* Padding for spacing */
+    text-align: center; /* Center text inside */
 }
 
 
-        .sidenav a {
-            padding: 10px;
-            text-decoration: none;
-            font-size: 15px;
-            color: #818181;
-            display: block;
-            text-align: center; /* Center the text */
-        }
+
+.sidenav a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #818181;
+    display: inline-block; /* Align links in a row */
+    text-align: center; /* Center text */
+}
+
 
         .sidenav a:hover {
             color: #f1f1f1;

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: 'Arial Rounded MT Bold', 'Arial', sans-serif;
+            background-color: #ebe9e1;
+            /*background: linear-gradient(to bottom, #ebe9e1, #e8e7e6);*/
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navbar a:hover {
+            background: #ddd;
+            color: black;
+        }
+
+        .main {
+            flex: 1;
+            padding: 16px;
+            margin-top: 60px; /* Adjusted margin to account for navbar */
+        }
+
+        .line {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 10px 0; /* Reduced padding to minimize space */
+        }
+
+        .left {
+            text-align: left;
+            padding-left: 30px;
+            flex: 1;
+        }
+
+        .right {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-basis: 60%; /* Set the width of the image container */
+        }
+
+        .right img {
+            max-width: 90%;
+            height: auto;
+            margin-right: 10%;
+            margin-top: 3%;
+            border: 1px solid #333;
+        }
+
+        .left p {
+            margin: 5px 0; /* Reduced margins to decrease space between paragraphs */
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.4), transparent);
+            margin: 20px 0; /* Adds some spacing above and below the line */
+        }
+
+        footer {
+            background: linear-gradient(to left, #f95ca4, #ed7845);
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center; /* Centers the links horizontally */
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .nav h3 {
+            margin: 0 23px; /* Adds space between the headers */
+            cursor: pointer;
+        }
+
+        /* Apply gradient to the h1 text */
+        h1 {
+            font-size: 500%;
+            margin-left: 5%;
+            background: linear-gradient(to bottom, #f95ca4, #ed7845); /* Gradient from light to normal pink */
+            -webkit-background-clip: text;
+            color: transparent; /* Set the text color to transparent to allow background-clip to work */
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px; /* Add padding to prevent the search bar from touching the edge */
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 120px; /* Make the sidebar narrower */
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        .sidenav a {
+            padding: 10px;
+            text-decoration: none;
+            font-size: 15px;
+            color: #818181;
+            display: block;
+            text-align: center; /* Center the text */
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .main {
+            margin-right: 120px; /* Adjust to account for the narrower sidebar */
+            font-size: 28px;
+            padding: 0px 10px;
+        }
+
+        .sidenav a i {
+            margin-right: 10px; /* Space between icon and text */
+        }
+
+        .sidenav a {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centers both icon and text */
+            padding: 10px;
+        }
+
+
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        /* Center website */
+    .main {
+    max-width: 1000px;
+    margin: auto;
+    }
+
+    .row {
+    margin: 2px 40px;
+    }
+
+    /* Add padding BETWEEN each column */
+    .row,
+    .row > .column {
+    padding: 15px;
+    }
+
+    /* Create four equal columns that floats next to each other */
+    .column {
+    float: left;
+    width: 25%;
+    }
+
+    /* Clear floats after rows */ 
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+
+    /* Content */
+    .content {
+    background-color: white;
+    padding: 10px;
+    }
+
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @media screen and (max-width: 900px) {
+    .column {
+        width: 50%;
+    }
+    }
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+    }
+
+        /* Center website */
+        .main2 {
+    max-width: 1000px;
+    margin: auto;
+    }
+
+    .row2 {
+    margin: 2px 40px;
+    }
+
+    /* Add padding BETWEEN each column */
+    .row2,
+    .row2 > .column2 {
+    padding: 15px;
+    }
+
+    /* Create four equal columns that floats next to each other */
+    .column2 {
+    float: left;
+    width: 25%;
+    }
+
+    /* Clear floats after rows */ 
+    .row2:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+
+    /* Content */
+    .content2 {
+    background-color: white;
+    padding: 10px;
+    }
+
+    /* Responsive layout - makes a two column-layout instead of four columns */
+    @media screen and (max-width: 10000px) {
+    .column2 {
+        width: 50%;
+    }
+    }
+</style>
+</head>
+
+</head>
+<body>
+
+    <h1>icmForUs</h1>
+
+    <div class="header-container">
+        <!-- Navigation -->
+        <div class="nav">
+            <h3><a href="NEWDESIGN.html" style="text-decoration: none; color: #000000;">NEWS</a></h3>
+            <h3><a href="TECHME.html" style="text-decoration: none; color: #000000;">TECH</a></h3>
+            <h3><a href="PHOTOGAL.html" style="text-decoration: none; color: #000000;">PORTFOLIO</a></h3>
+            <h3><a href="BOOKINGS.html" style="text-decoration: none; color: #000000;">BOOKINGS</a></h3>
+        </div>
+         
+    </div>
+
+    <div class="sidenav">
+        <a href="index.html">Home</a>
+        <a href="CONTACTME2.html">About</a>
+        <a href="CONTACTMEE.html">Contact</a>
+        <a href="https://www.instagram.com/icmforus/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/icmforus" target="_blank"><i class="fa-brands fa-x-twitter"></i></i></a>
+        <a href="https://www.youtube.com/@icmForUs" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <h1 style="font-size: 30px; color: #000000;">Parties</h1>
+
+    <!-- Portfolio Gallery Grid -->
+    <div class="row2">
+        <div class="column2">
+          <div class="content2">
+            <h3>Parties</h3>
+            <p>Our party photoshoots are designed to capture the joy and excitement of your special celebrations. Whether you're hosting a birthday bash, anniversary party, or any other festive event, we are skilled at documenting every memorable moment. From candid shots of guests enjoying themselves to carefully staged group photos, we ensure that your event is beautifully preserved. Contact us to discuss your party details, and we’ll work with you to create a tailored photography experience that fits your vision.</p>
+            <h3>How To Book</h3>
+            <p>To book a photoshoot for an event, first contact the photographer via email or phone with details about the event, including the date, time, and location. Share any specific requirements or themes you have in mind. After discussing the specifics, you’ll receive a quote and finalize the arrangements. On the day of the event, the photographer will arrive early to set up and ensure they capture all important moments. Payment is generally made in person, with both cash and online card options are accepted, including Zelle, CashApp, and Apple Pay.</p>
+            <h3>Prices</h3> 
+            <p>When booking a party photoshoot, the price for events within a 15-mile radius is $100, which includes up to two hours of coverage and digital copies of all edited photos. If your event requires coverage beyond the initial two hours, an hourly rate of $50 will apply for any additional time. This ensures you get the full coverage you need without any rush. For events located beyond this radius, the price sets at $150.</p>
+
+            <p>The package includes professional photos of your event, digital copies of all edited images, and an online gallery posted on our site (optional). For more information or to book your photoshoot, feel free to reach out via email or phone. We’re here to help make your event memorable with high-quality photos tailored to your needs.</p>
+                
+      </div>
+      <!-- END GRID -->
+      </div>
+      
+      <!-- END MAIN -->
+      </div>
+
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            /* Your existing styles */
+        </style>
+        <script src="https://kit.fontawesome.com/7541ffbdd1.js" crossorigin="anonymous"></script>
+    </head>
+    
+
+</body>
+</html>

@@ -120,27 +120,31 @@
         }
 
 .sidenav {
-    height: auto; /* Adjust height to fit content */
-    width: 100%; /* Full width to span the bottom */
+    height: 60px; /* Adjust height as needed */
+    width: 100%;
     position: fixed;
-    bottom: 0; /* Stick to the bottom */
-    left: 0; /* Align to the left edge */
+    bottom: 0;
     background-color: #111;
-    overflow-x: hidden;
-    padding: 10px 0; /* Padding for spacing */
-    text-align: center; /* Center text inside */
+    overflow-x: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 1;
 }
-
-
 
 .sidenav a {
     padding: 10px;
     text-decoration: none;
     font-size: 15px;
     color: #818181;
-    display: inline-block; /* Align links in a row */
-    text-align: center; /* Center text */
+    text-align: center;
 }
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
 
 
         .sidenav a:hover {

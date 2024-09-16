@@ -119,36 +119,6 @@
             padding: 0 30px; /* Add padding to prevent the search bar from touching the edge */
         }
 
-.sidenav {
-    height: auto; /* Adjust height automatically based on content */
-    width: 100%; /* Full width */
-    position: fixed; /* Fixed position at the bottom */
-    bottom: 0; /* Align to the bottom of the viewport */
-    left: 0; /* Align to the left edge */
-    background-color: #111;
-    display: flex; /* Use flexbox for horizontal alignment */
-    justify-content: space-around; /* Distribute space evenly */
-    align-items: center; /* Center items vertically */
-    padding: 10px 0; /* Padding for space inside the footer */
-    z-index: 10; /* Ensure it’s above other content */
-}
-
-.sidenav a {
-    text-decoration: none;
-    font-size: 15px;
-    color: #818181;
-    display: block;
-    text-align: center;
-}
-
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-.sidenav i {
-    margin-right: 5px; /* Adjust space between icon and text */
-}
-
 
 
         .main {
@@ -157,19 +127,42 @@
     padding: 0px 10px;
 }
 
+/* Sidebar as footer */
+.sidenav {
+    height: auto; /* Auto height to accommodate content */
+    width: 100%; /* Full width */
+    position: fixed; /* Fixed positioning */
+    bottom: 0; /* Positioned at the bottom */
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding: 10px 0; /* Vertical padding */
+    display: flex;
+    justify-content: space-around; /* Space items horizontally */
+    align-items: center; /* Center items vertically */
+    z-index: 1000; /* Ensure it is on top */
+}
 
-        .sidenav a i {
-            margin-right: 10px; /* Space between icon and text */
-        }
-
-        .sidenav a {
-    padding: 10px;
+/* Sidebar links */
+.sidenav a {
     text-decoration: none;
     font-size: 15px;
     color: #818181;
     display: block;
-    text-align: center; /* Center text horizontally */
+    text-align: center;
+    padding: 10px;
 }
+
+/* Hover effect for sidebar links */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+/* Ensure main content is not covered by footer */
+body {
+    padding-bottom: 60px; /* Adjust based on sidebar height */
+}
+
 
 
 

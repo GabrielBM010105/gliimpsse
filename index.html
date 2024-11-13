@@ -2,313 +2,348 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
+    <style>
         body {
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            font-family: 'Arial Rounded MT Bold', 'Arial', sans-serif;
-            background-color: #ebe9e1;
-            /*background: linear-gradient(to bottom, #ebe9e1, #e8e7e6);*/
-        }
-
-        .navbar {
-            overflow: hidden;
-            background-color: #333;
-            position: fixed;
-            top: 0;
-            width: 100%;
-        }
-
-        .navbar a {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-        }
-
-        .navbar a:hover {
-            background: #ddd;
-            color: black;
-        }
-
-        .main {
-            flex: 1;
-            padding: 16px;
-            margin-top: 60px; /* Adjusted margin to account for navbar */
-        }
-
-        .line {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 10px 0; /* Reduced padding to minimize space */
-        }
-
-        .left {
-            text-align: left;
-            padding-left: 30px;
-            flex: 1;
-        }
-
-        .right {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex-basis: 60%; /* Set the width of the image container */
-        }
-
-        .right img {
-            max-width: 90%;
-            height: auto;
-            margin-right: 10%;
-            margin-top: 3%;
-            border: 1px solid #333;
-        }
-
-        .left p {
-            margin: 5px 0; /* Reduced margins to decrease space between paragraphs */
-        }
-
-        hr {
-            border: 0;
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.4), transparent);
-            margin: 20px 0; /* Adds some spacing above and below the line */
-        }
-
-        footer {
-            background: linear-gradient(to left, #f95ca4, #ed7845);
-            color: rgb(0, 0, 0);
-            text-align: center;
-            padding: 10px 0;
-            position: relative;
-            width: 100%;
-            bottom: 0;
-        }
-
-        .nav {
-            display: flex;
-            justify-content: center; /* Centers the links horizontally */
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .nav h3 {
-            margin: 0 23px; /* Adds space between the headers */
-            cursor: pointer;
-        }
-
-        /* Apply gradient to the h1 text */
-        h1 {
-            font-size: 500%;
-            margin-left: 5%;
-            background: linear-gradient(to bottom, #f95ca4, #ed7845); /* Gradient from light to normal pink */
-            -webkit-background-clip: text;
-            color: transparent; /* Set the text color to transparent to allow background-clip to work */
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #FCF6F5;
         }
 
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 30px; /* Add padding to prevent the search bar from touching the edge */
+            background-image: url('SKYLINE.JPG');
+            background-size: cover;
+            background-position: center;
+            height: 150px;
+            color: white;
+            padding: 0 30px;
         }
 
-        .main {
-    margin-right: 0; /* No margin needed as sidebar is at the bottom now */
-    font-size: 28px;
-    padding: 0px 10px;
-}
-
-
- /* Top navigation acting as a header */
-.sidenav {
-    height: auto; /* Auto height to fit content */
-    width: 100%; /* Full width */
-    position: fixed; /* Fixed positioning at the top */
-    top: 0; /* Positioned at the very top */
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    padding: 10px 0; /* Vertical padding */
-    display: flex;
-    justify-content: space-around; /* Space items horizontally */
-    align-items: center; /* Center items vertically */
-    z-index: 1000; /* Make sure it's on top of other content */
-}
-
-/* Sidebar links */
-.sidenav a {
-    text-decoration: none;
-    font-size: 15px;
-    color: #818181;
-    display: block;
-    text-align: center;
-    padding: 10px;
-}
-
-/* Hover effect for sidebar links */
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-/* Ensure the rest of the page is not covered by top navigation */
-body {
-    padding-top: 60px; /* Adjust based on sidebar height */
-}
-
-
-
-
-        @media screen and (max-height: 450px) {
-            .sidenav {
-                padding-top: 15px;
-            }
-
-            .sidenav a {
-                font-size: 18px;
-            }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
         }
 
-        /* Center website */
-    .main {
-    max-width: 1000px;
-    margin: auto;
-    }
+        .gabe-image {
+            width: 25%;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
 
-    .row {
-    margin: 2px 40px;
-    }
+        .header-text {
+            font-size: 3em;
+            color: #fff;
+            margin: 0;
+        }
 
-    /* Add padding BETWEEN each column */
-    .row,
-    .row > .column {
-    padding: 15px;
-    }
+        .right-text {
+            font-size: 1.5em;
+            color: #fff;
+            max-width: 500px;
+            font-weight: bold;
+        }
 
-    /* Create four equal columns that floats next to each other */
-    .column {
-    float: left;
-    width: 25%;
-    }
+        .title-container {
+            display: flex;
+            align-items: flex-end;
+            padding-left: 2%;
+            margin-top: 10px;
+        }
 
-    /* Clear floats after rows */ 
-    .row:after {
-    content: "";
-    display: table;
-    clear: both;
-    }
+        .title-container h1 {
+            font-size: 450%;
+            color: rgb(0, 0, 0);
+            margin: 0;
+        }
 
-    /* Content */
-    .content {
-    background-color: white;
-    padding: 10px;
-    }
+        .title-container h2 {
+            font-size: 1.5em;
+            color: rgb(0, 0, 0);
+            padding-left: 2%;
+        }
 
-    /* Responsive layout - makes a two column-layout instead of four columns */
-    @media screen and (max-width: 900px) {
-    .column {
-        width: 50%;
-    }
-    }
+        .title-container h3 {
+            font-size: 1.1em;
+            color: rgb(0, 0, 0);
+            margin: 0 0 13px 35px;
+        }
 
-    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 600px) {
-    .column {
-        width: 100%;
-    }
-    }
-</style>
+        .nav {
+            display: flex;
+            gap: 20px;
+            padding-left: 2%;
+            margin-top: 20px;
+            padding-top: 13px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        * {box-sizing: border-box}
+        .mySlides {display: none}
+        img {vertical-align: middle;}
+
+        .slideshow-container {
+            max-width: 700px;
+            position: relative;
+            margin-left: 4%;
+            border: 1px solid black;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+            }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
+        @media only screen and (max-width: 300px) {
+            .prev, .next,.text {font-size: 11px}
+        }
+
+        .row {
+            margin: 2px 40px;
+        }
+
+        .row,
+        .row > .column {
+            padding: 15px;
+        }
+
+        .column {
+            float: left;
+            width: 25%;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .content {
+            background-color: white;
+            padding: 10px;
+        }
+
+        @media screen and (max-width: 900px) {
+        .column {
+            width: 50%;
+        }
+        }
+
+        @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+        }
+        }
+
+        .about-container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 20px 3%;
+            gap: 20px;
+        }
+
+        .about-container img {
+            border: 1px solid black;
+            border-radius: 8px;
+            width: 30%;
+        }
+
+        .about-text {
+            font-size: 0.95em;
+            line-height: 1.6;
+            flex: 1;
+        }
+
+    </style>
 </head>
 
-</head>
 <body>
 
-    <h1>icmForUs</h1>
-
     <div class="header-container">
-        <!-- Navigation -->
-        <div class="nav">
-            <h3><a href="NEWDESIGN.html" style="text-decoration: none; color: #000000;">NEWS</a></h3>
-            <h3><a href="TECHME.html" style="text-decoration: none; color: #000000;">TECH</a></h3>
-            <h3><a href="PHOTOGAL.html" style="text-decoration: none; color: #000000;">PORTFOLIO</a></h3>
-            <h3><a href="BOOKINGS.html" style="text-decoration: none; color: #000000;">BOOKINGS</a></h3>
-        </div>
-         
+        <div class="header-content"></div>
     </div>
 
-    <div class="sidenav">
-        <a href="index.html">Home</a>
-        <a href="CONTACTME2.html">About</a>
-        <a href="CONTACTMEE.html">Contact</a>
-        <a href="https://www.instagram.com/icmforus/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://x.com/icmforus" target="_blank"><i class="fa-brands fa-x-twitter"></i></i></a>
-        <a href="https://www.youtube.com/@icmForUs" target="_blank"><i class="fab fa-youtube"></i></a>
+    <br>
+
+    <div class="title-container">
+        <h1>gliimpsse</h1>
+        <h3>PORTFOLIO BY GABRIEL MENGHISTEAB</h3>
     </div>
 
-    <h1 style="font-size: 30px; color: #000000;">RECENTS</h1>
+    <div class="nav">
+        <a href="index.html">HOME</a>
+        <a href="TECHME.html">TECH</a>
+        <a href="PHOTOGAL.html">GALLERY</a>
+        <a href="https://www.instagram.com/gliimpsse/">INSTAGRAM</a>
+    </div>
 
-    <body>
+    <br>
+
+    <div class="title-container">
+        <h2>FEATURED</h2>
+    </div>
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <img src="DC2.JPG" style="width:100%">
+        </div>
         
-        <!-- Portfolio Gallery Grid -->
-        <div class="row">
-            <div class="column">
-                <div class="content">
-                  <a href="EESAPHOTOSHOOT.html" style="text-decoration: none; color: #000000;"><img src="EESAEESA.JPG" alt="Mountains" style="width:100%">
-                  <h3>Georgia Tech EESA Photoshoot</h3>
-                  <p>A photoshoot showcasing all the eBoard members of the Georgia Tech Eritrean-Ethiopian Student Association.</p>
-                  <p style="font-size: 13px;">September 15</p></a>
-                </div>
-              </div>
-          <div class="column">
-            <div class="content">
-              <a href="WASHINGTON.html" style="text-decoration: none; color: #000000;"><img src="DCC2.JPG" alt="Mountains" style="width:100%">
-              <h3>Washington Gallery</h3>
-              <p>A gallery of photos taken in Washington, DC, featuring a mix of urban nature scenes and portraits.</p>
-              <p style="font-size: 13px;">July 16</p></a>
-            </div>
+        <div class="mySlides fade">
+          <img src="DC.JPG" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="DC11.JPG" style="width:100%">
           </div>
-          <div class="column">
-            <div class="content">
-                <a href="RCACARSHOW.html" style="text-decoration: none; color: #000000;"><img src="3.JPG" alt="Lights" style="width:100%">
-              <h3>RCA Car Show</h3>
-              <p>A gallery capturing the 2024 Annual Car Show at the Rockdale Career Academy in Conyers, Rockdale County, GA. </p>
-              <p style="font-size: 13px;">May 12</p></a>
-            </div>
-          </div>
-        <!-- END GRID -->
-        </div>
         
-        <!-- END MAIN -->
-        </div>
-
-        <h1 style="font-size: 30px; color: #000000;">UPCOMING</h1>
-
-        <div class="row">
-            <div class="column">
-                <div class="content">
-                  <h3>Personal Portfolios</h3>
-                  <p>Each member of ICM will create a personal portfolio that showcases their unique ambitions, talents, and personalities.</p>
-                  <p style="font-size: 13px;">August 16</p>
-                </div>
-            </div>
-        </div>
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
         
-        </body>
-
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-            /* Your existing styles */
-        </style>
-        <script src="https://kit.fontawesome.com/7541ffbdd1.js" crossorigin="anonymous"></script>
-    </head>
+    </div>
+        
+    <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
     
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+
+    <div class="title-container">
+        <h2>RECENTS</h2>
+    </div>
+        
+    <div class="row">
+        <div class="column">
+            <div class="content">
+              <a href="EESAPHOTOSHOOT.html" style="text-decoration: none; color: #000000;"><img src="EESAEESA.JPG" alt="Mountains" style="width:100%">
+              <h3>Georgia Tech EESA Photoshoot</h3>
+              <p>A photoshoot showcasing all the eBoard members of the Georgia Tech Eritrean-Ethiopian Student Association.</p>
+              <p style="font-size: 13px;">September 15</p></a>
+            </div>
+          </div>
+      <div class="column">
+        <div class="content">
+          <a href="WASHINGTON.html" style="text-decoration: none; color: #000000;"><img src="DCC2.JPG" alt="Mountains" style="width:100%">
+          <h3>Washington Gallery</h3>
+          <p>A gallery of photos taken in Washington, DC, featuring a mix of urban nature scenes and portraits.</p>
+          <p style="font-size: 13px;">August 24</p></a>
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+
+    <div class="about-container">
+      <img src="gabe.jpg" alt="Gabriel" class="about-image">
+      <div class="about-text">
+        <h2>ABOUT</h2>
+        <p>
+            I'm Gabriel Menghisteab, a sophomore at Georgia Tech, originally from Conyers, GA. My journey here is fueled by a drive to make a positive impact through technology and a deep appreciation for visual storytelling and design. Majoring in computer science, I’m exploring how technology can be harnessed to shape experiences, solve problems, and inspire change. 
+            <br><br>
+            Photography has become a key part of my life. I started earlier this year, and since then, my camera has opened up an entirely new way of seeing the world. I love capturing authentic moments — from the energy of city streets to serene landscapes. This passion led me to join GT NSBE’s Publications Committee, where I can channel my creativity into visual storytelling for our community, helping others see the beauty and depth in what might otherwise go unnoticed.
+            <br><br>
+            Lately, my interest in photography has deepened into an appreciation for architecture. I’m captivated by how structures and spaces evoke emotions, tell stories, and influence how we move through the world. There’s an art to it, a balance of form and function, and I’m curious about how technology can intersect with architectural design. Perhaps one day, I’ll be able to use my CS skills to develop tools or applications that allow others to visualize or experience architecture in innovative ways.
+        </p>
+      </div>
+    </div>
+
+    <p style="padding-left: 2%; font-size: 15px;">Combining these interests — computer science, photography, and architecture — I envision building a portfolio that not only showcases my technical and creative skills but also reflects a holistic approach to design and storytelling. I’m on a journey to explore how these fields intersect and enrich each other, driven by the belief that technology and art together can create powerful, lasting impacts.</p>
+
+    <br></br>
 
 </body>
 </html>

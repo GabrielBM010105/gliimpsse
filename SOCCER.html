@@ -5,356 +5,166 @@
     <style>
         body {
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            font-family: 'Arial Rounded MT Bold', 'Arial', sans-serif;
-            background-color: #ebe9e1;
-            /*background: linear-gradient(to bottom, #ebe9e1, #e8e7e6);*/
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #FCF6F5;
         }
 
-        .navbar {
-            overflow: hidden;
-            background-color: #333;
-            position: fixed;
-            top: 0;
-            width: 100%;
-        }
-
-        .navbar a {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-        }
-
-        .navbar a:hover {
-            background: #ddd;
-            color: black;
-        }
-
-        .main {
-            flex: 1;
-            padding: 16px;
-            margin-top: 60px; /* Adjusted margin to account for navbar */
-        }
-
-        .line {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 10px 0; /* Reduced padding to minimize space */
-        }
-
-        .left {
-            text-align: left;
-            padding-left: 30px;
-            flex: 1;
-        }
-
-        .right {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex-basis: 60%; /* Set the width of the image container */
-        }
-
-        .right img {
-            max-width: 90%;
-            height: auto;
-            margin-right: 10%;
-            margin-top: 3%;
-            border: 1px solid #333;
-        }
-
-        .left p {
-            margin: 5px 0; /* Reduced margins to decrease space between paragraphs */
-        }
-
-        hr {
-            border: 0;
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.4), transparent);
-            margin: 20px 0; /* Adds some spacing above and below the line */
-        }
-
-        footer {
-            background: linear-gradient(to left, #f95ca4, #ed7845);
-            color: rgb(0, 0, 0);
-            text-align: center;
-            padding: 10px 0;
-            position: relative;
-            width: 100%;
-            bottom: 0;
-        }
-
-        .nav {
-            display: flex;
-            justify-content: center; /* Centers the links horizontally */
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .nav h3 {
-            margin: 0 23px; /* Adds space between the headers */
-            cursor: pointer;
-        }
-
-        /* Apply gradient to the h1 text */
-        h1 {
-            font-size: 500%;
-            margin-left: 5%;
-            background: linear-gradient(to bottom, #f95ca4, #ed7845); /* Gradient from light to normal pink */
-            -webkit-background-clip: text;
-            color: transparent; /* Set the text color to transparent to allow background-clip to work */
-        }
-
+        /* Header container with background image */
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 30px; /* Add padding to prevent the search bar from touching the edge */
+            background-image: url('SKYLINE.JPG');
+            background-size: cover; /* Make the image cover the entire header */
+            background-position: center; /* Center the image */
+            height: 150px; /* Set a fixed height for the header */
+            color: white; /* Ensure the text is visible on top of the background */
+            padding: 0 30px;
         }
 
-/* Top navigation acting as a header */
-.sidenav {
-    height: auto; /* Auto height to fit content */
-    width: 100%; /* Full width */
-    position: fixed; /* Fixed positioning at the top */
-    top: 0; /* Positioned at the very top */
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    padding: 10px 0; /* Vertical padding */
-    display: flex;
-    justify-content: space-around; /* Space items horizontally */
-    align-items: center; /* Center items vertically */
-    z-index: 1000; /* Make sure it's on top of other content */
-}
-
-/* Sidebar links */
-.sidenav a {
-    text-decoration: none;
-    font-size: 15px;
-    color: #818181;
-    display: block;
-    text-align: center;
-    padding: 10px;
-}
-
-/* Hover effect for sidebar links */
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-/* Ensure the rest of the page is not covered by top navigation */
-body {
-    padding-top: 60px; /* Adjust based on sidebar height */
-}
-
-
-
-
-
-        @media screen and (max-height: 450px) {
-            .sidenav {
-                padding-top: 15px;
-            }
-
-            .sidenav a {
-                font-size: 18px;
-            }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
         }
 
-            /* Center website */
-    .main {
-    max-width: 1000px;
-    margin: auto;
-    }
+        .gabe-image {
+            width: 25%;
+            margin-right: 20px; /* Adds space between the image and the text */
+            border-radius: 8px; /* Optional: adds rounded corners to the image */
+        }
 
-    .row {
-    margin: 2px 40px;
-    }
+        .header-text {
+            font-size: 3em;
+            color: #fff; /* White text for better contrast on dark backgrounds */
+            margin: 0;
+        }
 
-    /* Add padding BETWEEN each column */
-    .row,
-    .row > .column {
-    padding: 15px;
-    }
+        .right-text {
+            font-size: 1.5em;
+            color: #fff; /* White text for better contrast */
+            max-width: 500px; /* Optional: set max width for the text */
+            font-weight: bold;
+        }
 
-    /* Create four equal columns that floats next to each other */
-    .column {
-    float: left;
-    width: 25%;
-    }
+        /* Title and subtitle container */
+        .title-container {
+            display: flex;
+            align-items: flex-end; /* Aligns the bottom of both texts */
+            padding-left: 2%;
+            margin-top: 10px; /* Reduces the gap above */
+        }
 
-    /* Clear floats after rows */ 
-    .row:after {
-    content: "";
-    display: table;
-    clear: both;
-    }
+        .title-container h1 {
+            font-size: 450%;
+            color: rgb(0, 0, 0);
+            margin: 0;
+        }
 
-    /* Content */
-    .content {
-    background-color: white;
-    padding: 10px;
-    }
+        .title-container h3 {
+            font-size: 1.1em;
+            color: rgb(0, 0, 0);
+            margin: 0 0 13px 35px; /* Adds space between main title and subtitle and aligns bottom */
+        }
 
-    /* Responsive layout - makes a two column-layout instead of four columns */
-    @media screen and (max-width: 10000px) {
-    .column {
-        width: 50%;
-    }
-    }
+        /* Navigation section */
+        .nav {
+            display: flex;
+            gap: 20px; /* Adds space between the links */
+            padding-left: 2%;
+            margin-top: 20px;
+        }
 
-        /* Center website */
-    .main {
-    max-width: 1000px;
-    margin: auto;
-    }
+        .nav a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
 
-    * {
-  box-sizing: border-box;
-}
+        .row2 {
+            display: -ms-flexbox; /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap; /* IE10 */
+            flex-wrap: wrap;
+            padding: 0 8px;
+            padding-left: 32px;
+        }
 
-.header {
-  text-align: center;
-  padding: 32px;
-}
+            /* Create four equal columns that sits next to each other */
+            .column2 {
+            -ms-flex: 25%; /* IE10 */
+            flex: 25%;
+            max-width: 25%;
+            padding: 0 20px;
+            }
 
-.row2 {
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-  padding: 0 8px;
-  padding-left: 32px;
-}
-
-/* Create four equal columns that sits next to each other */
-.column2 {
-  -ms-flex: 25%; /* IE10 */
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 20px;
-}
-
-.column2 img {
-        margin-top: 8px;
-        vertical-align: middle;
-        width: 100%;
-        border: 2px solid black; /* Narrow black border */
-        margin-bottom: 10px; /* Adds space between the images */
-    }
-
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 9000px) {
-  .column {
-    -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
-  }
-}
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
-  }
-}
-</style>
+            .column2 img {
+                    margin-top: 8px;
+                    vertical-align: middle;
+                    width: 100%;
+                    border: 2px solid black; /* Narrow black border */
+                    margin-bottom: 10px; /* Adds space between the images */
+                }
+    </style>
 </head>
 
-</head>
 <body>
 
-    <h1>icmForUs</h1>
-
     <div class="header-container">
-        <!-- Navigation -->
-        <div class="nav">
-            <h3><a href="NEWDESIGN.html" style="text-decoration: none; color: #000000;">NEWS</a></h3>
-            <h3><a href="TECHME.html" style="text-decoration: none; color: #000000;">TECH</a></h3>
-            <h3><a href="PHOTOGAL.html" style="text-decoration: none; color: #000000;">PORTFOLIO</a></h3>
-            <h3><a href="BOOKINGS.html" style="text-decoration: none; color: #000000;">BOOKINGS</a></h3>
+        <div class="header-content">
+            <!-- Header content (e.g., logo or image) if needed -->
         </div>
-         
     </div>
 
-    <div class="sidenav">
-        <a href="index.html">Home</a>
-        <a href="CONTACTME2.html">About</a>
-        <a href="CONTACTMEE.html">Contact</a>
-        <a href="https://www.instagram.com/icmforus/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://x.com/icmforus" target="_blank"><i class="fa-brands fa-x-twitter"></i></i></a>
-        <a href="https://www.youtube.com/@icmForUs" target="_blank"><i class="fab fa-youtube"></i></a>
+    <br></br>
+
+    <!-- Title and subtitle aligned horizontally -->
+    <div class="title-container">
+        <h1>GEORGIA TECH EESA</h1>
+        <h3>SOCCER TOURNAMENT</h3>
     </div>
-    <h1 style="font-size: 30px; color: #000000;">Georgia Tech EESA Soccer Tournament</h1>
-    <p style="font-size: 16px; padding-left: 73px;">April 20, 2024</p></a>
 
-    <!-- Portfolio Gallery Grid -->
-    <div class="row">
-        <div class="column">
-          <div class="content">
-            <h3>About The Event</h3>
-            <p style="font-size: 15px;">A collection of photos from the Georgia Tech EESA Soccer Tournament, capturing the excitement, teamwork, and friendly competition among participants. These images showcase the energy and community spirit of the Eritrean and Ethiopian Student Association as they come together for a day of sports and celebration.</p>
-            <h3>Credits</h3>
-            <p style="font-size: 15px;">Gabriel Menghisteab</p>
-              
-      </div>
-      <!-- END GRID -->
-      </div>
-      
-      <!-- END MAIN -->
-      </div>
+     <!-- Navigation -->
+     <div class="nav">
+        <a href="index.html">HOME</a>
+        <a href="TECHME.html">TECH</a>
+        <a href="PHOTOGAL.html">GALLERY</a>
+        <a href="https://www.instagram.com/gliimpsse/">INSTAGRAM</a>
+    </div>
 
-    <body>
-        
+    <h4 style="padding-left: 3%;">APRIL 20</h4>
+
+    <p style="padding-left: 3%;">A collection of photos from the Georgia Tech EESA Soccer Tournament, capturing the excitement, teamwork, and friendly competition among participants. These images showcase the energy and community spirit of the Eritrean and Ethiopian Student Association as they come together for a day of sports and celebration.</p>
+
         <!-- Photo Grid -->
-<div class="row2"> 
-    <div class="column2">
-      <img src="S5.JPG" style="width:100%">
-      <img src="S2.JPG" style="width:100%">
-      <img src="S14.JPG" style="width:100%">
-      <img src="FRIENDS.JPG" style="width:100%">
-      <img src="S3.JPG" style="width:100%">
-      <img src="S11.JPG" style="width:100%">
-      <img src="S12.JPG" style="width:100%">
-    </div>
-    <div class="column2">
-        <img src="S13.JPG" style="width:100%">
-      <img src="1616.JPG" style="width:100%">
-      <img src="1919.JPG" style="width:100%">
-      <img src="S10.JPG" style="width:100%">
-      <img src="S6.JPG" style="width:100%">
-      <img src="S9.JPG" style="width:100%">
-    </div>  
-    <div class="column2">
-      <img src="S4.JPG" style="width:100%">
-      <img src="S1.JPG" style="width:100%">
-      <img src="1717.JPG" style="width:100%">
-      <img src="S7.JPG" style="width:100%">
-      <img src="S8.JPG" style="width:100%">
-    </div>
-  </div>
-  
-        
-        </body>
+        <div class="row2"> 
+            <div class="column2">
+              <img src="S5.JPG" style="width:100%">
+              <img src="S2.JPG" style="width:100%">
+              <img src="S14.JPG" style="width:100%">
+              <img src="FRIENDS.JPG" style="width:100%">
+              <img src="S3.JPG" style="width:100%">
+              <img src="S11.JPG" style="width:100%">
+              <img src="S12.JPG" style="width:100%">
+            </div>
+            <div class="column2">
+                <img src="S13.JPG" style="width:100%">
+              <img src="1616.JPG" style="width:100%">
+              <img src="1919.JPG" style="width:100%">
+              <img src="S10.JPG" style="width:100%">
+              <img src="S6.JPG" style="width:100%">
+              <img src="S9.JPG" style="width:100%">
+            </div>  
+            <div class="column2">
+              <img src="S4.JPG" style="width:100%">
+              <img src="S1.JPG" style="width:100%">
+              <img src="1717.JPG" style="width:100%">
+              <img src="S7.JPG" style="width:100%">
+              <img src="S8.JPG" style="width:100%">
+            </div>
+          </div>
 
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-            /* Your existing styles */
-        </style>
-        <script src="https://kit.fontawesome.com/7541ffbdd1.js" crossorigin="anonymous"></script>
-    </head>
-    
 
 </body>
 </html>

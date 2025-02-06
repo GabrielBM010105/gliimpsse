@@ -5,20 +5,19 @@
     <style>
         body {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             background-color: #FCF6F5;
         }
 
-        /* Header container with background image */
         .header-container {
-            display: flex;
+            display:flex;
             justify-content: space-between;
             align-items: center;
             background-image: url('SKYLINE.JPG');
-            background-size: cover; /* Make the image cover the entire header */
-            background-position: center; /* Center the image */
-            height: 150px; /* Set a fixed height for the header */
-            color: white; /* Ensure the text is visible on top of the background */
+            background-size:cover;
+            background-position: center;
+            height: 245px;
+            color: white;
             padding: 0 30px;
         }
 
@@ -30,49 +29,57 @@
 
         .gabe-image {
             width: 25%;
-            margin-right: 20px; /* Adds space between the image and the text */
-            border-radius: 8px; /* Optional: adds rounded corners to the image */
+            margin-right: 20px;
+            border-radius: 8px;
         }
 
         .header-text {
             font-size: 3em;
-            color: #fff; /* White text for better contrast on dark backgrounds */
+            color: #fff;
             margin: 0;
         }
 
         .right-text {
             font-size: 1.5em;
-            color: #fff; /* White text for better contrast */
-            max-width: 500px; /* Optional: set max width for the text */
+            color: #fff;
+            max-width: 500px;
             font-weight: bold;
         }
 
-        /* Title and subtitle container */
         .title-container {
             display: flex;
-            align-items: flex-end; /* Aligns the bottom of both texts */
-            padding-left: 2%;
-            margin-top: 10px; /* Reduces the gap above */
+            align-items: flex-end;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
         }
 
         .title-container h1 {
             font-size: 450%;
             color: rgb(0, 0, 0);
             margin: 0;
+            font-family:serif;
+            text-decoration: none;
+        }
+
+        .title-container h2 {
+            font-size: 1.5em;
+            color: rgb(0, 0, 0);
         }
 
         .title-container h3 {
             font-size: 1.1em;
             color: rgb(0, 0, 0);
-            margin: 0 0 13px 35px; /* Adds space between main title and subtitle and aligns bottom */
+            margin: 0 0 13px 35px;
         }
 
-        /* Navigation section */
         .nav {
             display: flex;
-            gap: 20px; /* Adds space between the links */
-            padding-left: 2%;
-            margin-top: 20px;
+            gap: 60px;
+            margin-top: -10px;
+            font-size: 12px;
+            align-items: center;
+            justify-content: center;
         }
 
         .nav a {
@@ -82,60 +89,277 @@
             font-size: 1.2em;
         }
 
+        * {box-sizing: border-box}
+        .mySlides {display: none}
+        img {vertical-align: middle;}
+
+        .slideshow-container {
+            width: 55%; /* Adjust as needed */
+            margin: 0 auto;
+            text-align: center;
+            position: relative; /* This allows absolute positioning of arrows inside */
+            border: 1px solid black;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%); /* Centers the arrows vertically */
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 50%; /* Make the arrows round */
+            background-color: rgba(0, 0, 0, 0.5); /* Dark background for visibility */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px; /* Adjust the width */
+            height: 40px; /* Adjust the height */
+        }
+
+        .prev {
+            left: 10px; /* Position to the left of the slideshow */
+        }
+
+        .next {
+            right: 10px; /* Position to the right of the slideshow */
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8); /* Darken on hover */
+        }
+
+
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+            }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
+        @media only screen and (max-width: 300px) {
+            .prev, .next,.text {font-size: 11px}
+        }
+
+        .row {
+            margin: -1.5% 40px;
+        }
+
+        .row,
+        .row > .column {
+            padding: 15px;
+        }
+
+        .column {
+            float: left;
+            width: 25%;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .content {
+            background-color: white;
+            padding: 10px;
+            border: 0.5px solid black;
+        }
+
+        @media screen and (max-width: 900px) {
+        .column {
+            width: 50%;
+        }
+        }
+
+        @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+        }
+        }
+
+        .about-container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 20px 3%;
+            gap: 20px;
+        }
+
+        .about-container img {
+            border: 1px solid black;
+            border-radius: 8px;
+            width: 30%;
+        }
+
+        .about-text {
+            font-size: 0.95em;
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .line {
+            width: 30%;
+            height: 1.5px;
+            background: black;
+            margin: 8px auto;
+
+        }
+
+        .gabe-image {
+            width: 26%; /* Adjusted size */
+            position: absolute;
+            right: 8%; /* Moves it to the right with padding */
+            top: 368px; /* Adjusted to align with the title */
+            border: 1px solid black;
+            border-radius: 0%;
+        }
+
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px 0; /* Add padding around text */
+            display: flex;
+            justify-content: flex-start; /* Aligns footer content to the left */
+            align-items: center;
+            padding-left: 30px; /* Adjust the left padding */
+        }
+
+        footer p {
+            margin: 5px 0; /* Add spacing between footer lines */
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size: 16px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 13px;
+            margin-right: 10px; /* Space between links */
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+
+        footer img {
+            width: 50%
+        }
+
         .row2 {
             display: -ms-flexbox; /* IE10 */
             display: flex;
             -ms-flex-wrap: wrap; /* IE10 */
             flex-wrap: wrap;
             padding: 0 8px;
-            padding-left: 32px;
+            justify-content: center;
+            align-items: center;
         }
 
-            /* Create four equal columns that sits next to each other */
-            .column2 {
+        /* Create four equal columns that sits next to each other */
+        .column2 {
             -ms-flex: 25%; /* IE10 */
             flex: 25%;
-            max-width: 25%;
+            max-width: 22%;
             padding: 0 20px;
-            }
+            justify-content: center;
+            align-items: center;
+        }
 
-            .column2 img {
-                    margin-top: 8px;
-                    vertical-align: middle;
-                    width: 80%;
-                    border: 2px solid black; /* Narrow black border */
-                    margin-bottom: 10px; /* Adds space between the images */
-                }
+        .column2 img {
+            margin-top: 8px;
+            vertical-align: middle;
+            width: 60%;
+            border: 2px solid black; /* Narrow black border */
+            margin-bottom: 10px; /* Adds space between the images */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .centered-text {
+            width: 75%;  /* Adjust width as needed */
+            margin: auto; /* Centers the block horizontally */
+            text-align: center;
+        }
+
     </style>
 </head>
 
 <body>
 
-    <div class="header-container">
-        <div class="header-content">
-            <!-- Header content (e.g., logo or image) if needed -->
-        </div>
-    </div>
+    <br>
+    <br>
 
-    <br></br>
-
-    <!-- Title and subtitle aligned horizontally -->
     <div class="title-container">
-        <h1>GT EESA</h1>
-        <h3>PHOTOSHOOT</h3>
+        <h1 style="font-size: 60px;"><b><a href="https://gliimpsse.com/" style="text-decoration: none; color: #000;">gliimpsse</a></b></h1>
     </div>
 
-    <!-- Navigation -->
+    <div class="title-container">
+        <p style="font-size: 13px;"><b>PORTFOLIO BY GABRIEL MENGHISTEAB</b></p>
+    </div>
+
+    <br>
+    <br>
+
     <div class="nav">
-        <a href="index.html">HOME</a>
-        <a href="TECHME.html">TECH</a>
-        <a href="PHOTOGAL.html">GALLERY</a>
-        <a href="https://www.instagram.com/gliimpsse/">INSTAGRAM</a>
+        <a href="TECHME.html">PROJECTS</a>
+        <a href="PHOTOGAL.html">BOOKINGS</a>
+        <a href="PHOTOGAL.html">ABOUT</a>
     </div>
 
-    <h4 style="padding-left: 3%;">SEPTEMBER 15, 2024</h4>
+    <div class="line"></div>
 
-    <p style="padding-left: 3%;">The Georgia Tech EESA is a student association centered around Eritrean and Ethiopian culture. Throughout the semester, the EESA eBoard members organize various meetings and events. This photoshoot highlights the eBoard members, capturing them in traditional cultural attire and with symbolic props.</p>
+    <br>
+
+    <div class="title-container">
+        <h2 style="font-size: 17px;">GEORGIA TECH EESA EBOARD PHOTOSHOOT</h2>
+    </div>
+
+    <div class="title-container">
+        <h4 style="font-size: 13px;">SEPTEMBER 15, 2024</h4>
+    </div>
+
+    <p style="font-size: 13.5px; padding-bottom: 1%;" class="centered-text">The Georgia Tech EESA (Eritrean-Ethiopian Student Association) is centered around Eritrean and Ethiopian culture. Throughout the semester, the EESA eBoard members organize various meetings and events. This photoshoot highlights the eBoard members, capturing them in traditional cultural attire and with symbolic props.</p>
+
+    <br>
+    <br>
 
             <!-- Photo Grid -->
     <div class="row2"> 
@@ -176,6 +400,15 @@
         <img src="FENNETH.JPG" style="width:100%">
         </div>
     </div>
+
+    <br></br>
+
+    <footer>
+        <a href="https://www.instagram.com/gliimpsse/"><img src="IG.JPG"></a>
+        <a href="https://www.linkedin.com/in/gabrielmenghisteab/"><img src="LI.JPG"></a>
+        <a href="mailto:gabrielbmenghisteab05@gmail.com"><img src="EMAIL.JPG"></a>
+        <br></br>
+    </footer>
 
 </body>
 </html>

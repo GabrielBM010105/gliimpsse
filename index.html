@@ -10,7 +10,7 @@
         }
 
         .header-container {
-            display: flex;
+            display:flex;
             justify-content: space-between;
             align-items: center;
             background-image: url('SKYLINE.JPG');
@@ -49,13 +49,15 @@
         .title-container {
             display: flex;
             align-items: flex-end;
-            padding-left: 2%;
+            align-items: center;
+            justify-content: center;
         }
 
         .title-container h1 {
             font-size: 450%;
             color: rgb(0, 0, 0);
             margin: 0;
+            font-family:serif;
         }
 
         .title-container h2 {
@@ -73,9 +75,10 @@
         .nav {
             display: flex;
             gap: 100px;
-            padding-left: 2%;
             margin-top: -10px;
             font-size: 16px;
+            align-items: center;
+            justify-content: center;
         }
 
         .nav a {
@@ -90,9 +93,10 @@
         img {vertical-align: middle;}
 
         .slideshow-container {
-            max-width: 40%;
-            position: relative;
-            margin-left: 4%;
+            width: 55%; /* Adjust as needed */
+            margin: 0 auto;
+            text-align: center;
+            position: relative; /* This allows absolute positioning of arrows inside */
             border: 1px solid black;
         }
 
@@ -100,25 +104,33 @@
             cursor: pointer;
             position: absolute;
             top: 50%;
-            width: auto;
+            transform: translateY(-50%); /* Centers the arrows vertically */
             padding: 16px;
-            margin-top: -22px;
             color: white;
             font-weight: bold;
             font-size: 18px;
             transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
+            border-radius: 50%; /* Make the arrows round */
+            background-color: rgba(0, 0, 0, 0.5); /* Dark background for visibility */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px; /* Adjust the width */
+            height: 40px; /* Adjust the height */
+        }
+
+        .prev {
+            left: 10px; /* Position to the left of the slideshow */
         }
 
         .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
+            right: 10px; /* Position to the right of the slideshow */
         }
 
         .prev:hover, .next:hover {
-            background-color: rgba(0,0,0,0.8);
+            background-color: rgba(0, 0, 0, 0.8); /* Darken on hover */
         }
+
 
         .text {
             color: #f2f2f2;
@@ -168,7 +180,7 @@
         }
 
         .row {
-            margin: 2px 40px;
+            margin: -1.5% 40px;
         }
 
         .row,
@@ -190,6 +202,7 @@
         .content {
             background-color: white;
             padding: 10px;
+            border: 0.5px solid black;
         }
 
         @media screen and (max-width: 900px) {
@@ -225,13 +238,13 @@
         }
 
         .line {
-            height: 1px; /* Thickness of the line */
-            background-color: black; /* Color of the line */
-            margin: 9px 0; /* Space around the line */
-            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3); /* Drop shadow effect */
-            width: 45%; /* Full width */
-            margin-left: 2%;
+            width: 48%;
+            height: 1.5px;
+            background: black;
+            margin: 8px auto;
+
         }
+
 
         .gabe-image {
             width: 26%; /* Adjusted size */
@@ -240,6 +253,34 @@
             top: 368px; /* Adjusted to align with the title */
             border: 1px solid black;
             border-radius: 0%;
+        }
+
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px 0; /* Add padding around text */
+            display: flex;
+            justify-content: flex-start; /* Aligns footer content to the left */
+            align-items: center;
+            padding-left: 30px; /* Adjust the left padding */
+        }
+
+        footer p {
+            margin: 5px 0; /* Add spacing between footer lines */
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size: 16px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 13px;
+            margin-right: 10px; /* Space between links */
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+
+        footer img {
+            width: 50%
         }
 
     </style>
@@ -255,10 +296,12 @@
     <br>
 
     <div class="title-container">
-        <h1 style="font-size: 55px;"><b>gliimpsse</b></h1>
+        <h1 style="font-size: 60px;"><b>gliimpsse</b></h1>
     </div>
 
-    <p style="font-size: 13px; padding-left: 2%;"><b>PORTFOLIO BY GABRIEL MENGHISTEAB</b></p>
+    <div class="title-container">
+        <p style="font-size: 13px;"><b>PORTFOLIO BY GABRIEL MENGHISTEAB</b></p>
+    </div>
 
     <br>
     <br>
@@ -332,10 +375,6 @@
         <h2>FEATURED PROJECTS</h2>
     </div>
 
-    <div class="title-container">
-        <h2>RECENTS</h2>
-    </div>
-        
     <div class="row">
         <div class="column">
             <div class="content">
@@ -353,31 +392,38 @@
           <p style="font-size: 13px;">August 24</p></a>
         </div>
       </div>
+      <div class="column">
+        <div class="content">
+          <a href="WASHINGTON.html" style="text-decoration: none; color: #000000;"><img src="DCC2.JPG" alt="Mountains" style="width:100%">
+          <h3>Washington Gallery</h3>
+          <p>A gallery of photos taken in Washington, DC, featuring a mix of urban nature scenes and portraits.</p>
+          <p style="font-size: 13px;">August 24</p></a>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <a href="WASHINGTON.html" style="text-decoration: none; color: #000000;"><img src="DCC2.JPG" alt="Mountains" style="width:100%">
+          <h3>Washington Gallery</h3>
+          <p>A gallery of photos taken in Washington, DC, featuring a mix of urban nature scenes and portraits.</p>
+          <p style="font-size: 13px;">August 24</p></a>
+        </div>
+      </div>
     </div>
 
     <br><br>
 
-    <div class="about-container">
-      <div class="about-text">
+    <div class="title-container">
         <h2>ABOUT</h2>
-        <p>
-            I'm Gabriel Menghisteab, a sophomore at Georgia Tech, originally from Conyers, GA. My journey here is fueled by a drive to make a positive impact through technology and a deep appreciation for visual storytelling and design. Majoring in computer science, I’m exploring how technology can be harnessed to shape experiences, solve problems, and inspire change. 
-            <br></br>
-            Photography has become a key part of my life. I started earlier this year, and since then, my camera has opened up an entirely new way of seeing the world. I love capturing authentic moments — from the energy of city streets to serene landscapes. This passion led me to join GT NSBE’s Publications Committee, where I can channel my creativity into visual storytelling for our community, helping others see the beauty and depth in what might otherwise go unnoticed.
-            <br></br>
-            Lately, my interest in photography has deepened into an appreciation for architecture. I’m captivated by how structures and spaces evoke emotions, tell stories, and influence how we move through the world. There’s an art to it, a balance of form and function, and I’m curious about how technology can intersect with architectural design. Perhaps one day, I’ll be able to use my CS skills to develop tools or applications that allow others to visualize or experience architecture in innovative ways.
-            <br></br>
-          Combining these interests — computer science, photography, and architecture — I envision building a portfolio that not only showcases my technical and creative skills but also reflects a holistic approach to design and storytelling. I’m on a journey to explore how these fields intersect and enrich each other, driven by the belief that technology and art together can create powerful, lasting impacts
-        </p>
-        <br></br>
-        <h2>CONTACT</h2>
-          <p>Phone Number: <a>470-209-4600</a></p>
-          <p>School Email: <a href="mailto:gmenghisteab6@gatech.edu">gmenghisteab6@gatech.edu</a></p>
-          <p>Personal Email: <a href="mailto:gabrielbmenghisteab05@gmail.com">gabrielbmenghisteab05@gmail.com</a></p>
-      </div>
     </div>
 
     <br></br>
+
+    <footer>
+        <a href="https://www.instagram.com/gliimpsse/"><img src="IG.JPG"></a>
+        <a href="https://www.linkedin.com/in/gabrielmenghisteab/"><img src="LI.JPG"></a>
+        <a href="mailto:gabrielbmenghisteab05@gmail.com"><img src="EMAIL.JPG"></a>
+        <br></br>
+    </footer>
 
 </body>
 </html>

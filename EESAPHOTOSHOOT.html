@@ -239,10 +239,10 @@
         }
 
         .line {
-            width: 30%;
+            width: 28%;
             height: 1.5px;
             background: black;
-            margin: 8px auto;
+            margin: 3px auto;
 
         }
 
@@ -317,6 +317,67 @@
             width: 75%;  /* Adjust width as needed */
             margin: auto; /* Centers the block horizontally */
             text-align: center;
+                }
+                .navbar {
+            display: flex;
+            justify-content: center; /* Centers items horizontally */
+            align-items: center; /* Aligns items vertically */
+            overflow: hidden;
+        }
+
+        .navbar a {
+        float: left;
+        font-size: 14px;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        }
+
+        .dropdown {
+        float: left;
+        overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 14px;  
+        border: none;
+        outline: none;
+        color: rgb(0, 0, 0);
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+        }
+
+        .navbar a:hover, .dropdown:hover .dropbtn {
+        background-color: rgb(220, 220, 220);
+        }
+
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        }
+
+        .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        }
+
+        .dropdown-content a:hover {
+        background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+        display: block;
         }
 
     </style>
@@ -328,32 +389,38 @@
     <br>
 
     <div class="title-container">
-        <h1 style="font-size: 60px;"><b><a href="https://gliimpsse.com/" style="text-decoration: none; color: #000;">gliimpsse</a></b></h1>
+        <h1 style="font-size: 60px;"><b><a href="index.html" style="text-decoration: none; color: #000;">gliimpsse</a></b></h1>
     </div>
 
     <div class="title-container">
         <p style="font-size: 13px;"><b>PORTFOLIO BY GABRIEL MENGHISTEAB</b></p>
     </div>
 
-    <br>
-    <br>
-
-    <div class="nav">
-        <a href="TECHME.html">PROJECTS</a>
-        <a href="PHOTOGAL.html">BOOKINGS</a>
-        <a href="PHOTOGAL.html">ABOUT</a>
-    </div>
-
     <div class="line"></div>
 
+    <div class="navbar">
+        <div class="dropdown">
+          <button class="dropbtn"><b>PROJECTS</b> 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="TECHPAGE.html">TECH</a>
+            <a href="PHOTOGAL.html">PHOTOGRAPHY</a>
+          </div>
+        </div> 
+        <a href="BOOKINGS.html"><b>BOOKINGS</b></a>
+        <a href="ABOUTME.html"><b>ABOUT</b></a>
+      </div>
+
     <br>
 
+
     <div class="title-container">
-        <h2 style="font-size: 15px;">GEORGIA TECH EESA EBOARD PHOTOSHOOT</h2>
+        <h2 style="font-size: 18px;font-family: serif;">GT EESA EBOARD PHOTOSHOOT</h2>
     </div>
 
     <div class="title-container">
-        <h4 style="font-size: 12px;">SEPTEMBER 15, 2024</h4>
+        <h4 style="font-size: 15px; font-family: serif;">SEPTEMBER 15, 2024</h4>
     </div>
 
     <p style="font-size: 13.5px; padding-bottom: 1%;" class="centered-text">The Georgia Tech EESA (Eritrean-Ethiopian Student Association) is centered around Eritrean and Ethiopian culture. Throughout the semester, the EESA eBoard members organize various meetings and events. This photoshoot highlights the eBoard members, capturing them in traditional cultural attire and with symbolic props.</p>

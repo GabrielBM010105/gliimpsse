@@ -5,20 +5,19 @@
     <style>
         body {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             background-color: #FCF6F5;
         }
 
-        /* Header container with background image */
         .header-container {
-            display: flex;
+            display:flex;
             justify-content: space-between;
             align-items: center;
             background-image: url('SKYLINE.JPG');
-            background-size: cover; /* Make the image cover the entire header */
-            background-position: center; /* Center the image */
-            height: 150px; /* Set a fixed height for the header */
-            color: white; /* Ensure the text is visible on top of the background */
+            background-size:cover;
+            background-position: center;
+            height: 245px;
+            color: white;
             padding: 0 30px;
         }
 
@@ -30,49 +29,57 @@
 
         .gabe-image {
             width: 25%;
-            margin-right: 20px; /* Adds space between the image and the text */
-            border-radius: 8px; /* Optional: adds rounded corners to the image */
+            margin-right: 20px;
+            border-radius: 8px;
         }
 
         .header-text {
             font-size: 3em;
-            color: #fff; /* White text for better contrast on dark backgrounds */
+            color: #fff;
             margin: 0;
         }
 
         .right-text {
             font-size: 1.5em;
-            color: #fff; /* White text for better contrast */
-            max-width: 500px; /* Optional: set max width for the text */
+            color: #fff;
+            max-width: 500px;
             font-weight: bold;
         }
 
-        /* Title and subtitle container */
         .title-container {
             display: flex;
-            align-items: flex-end; /* Aligns the bottom of both texts */
-            padding-left: 2%;
-            margin-top: 10px; /* Reduces the gap above */
+            align-items: flex-end;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
         }
 
         .title-container h1 {
             font-size: 450%;
             color: rgb(0, 0, 0);
             margin: 0;
+            font-family:serif;
+            text-decoration: none;
+        }
+
+        .title-container h2 {
+            font-size: 1.5em;
+            color: rgb(0, 0, 0);
         }
 
         .title-container h3 {
             font-size: 1.1em;
             color: rgb(0, 0, 0);
-            margin: 0 0 13px 35px; /* Adds space between main title and subtitle and aligns bottom */
+            margin: 0 0 13px 35px;
         }
 
-        /* Navigation section */
         .nav {
             display: flex;
-            gap: 20px; /* Adds space between the links */
-            padding-left: 2%;
-            margin-top: 20px;
+            gap: 60px;
+            margin-top: -10px;
+            font-size: 12px;
+            align-items: center;
+            justify-content: center;
         }
 
         .nav a {
@@ -82,87 +89,359 @@
             font-size: 1.2em;
         }
 
-            .row {
-        margin: 2px 40px;
+        * {box-sizing: border-box}
+        .mySlides {display: none}
+        img {vertical-align: middle;}
+
+        .slideshow-container {
+            width: 55%; /* Adjust as needed */
+            margin: 0 auto;
+            text-align: center;
+            position: relative; /* This allows absolute positioning of arrows inside */
+            border: 1px solid black;
         }
 
-        /* Add padding BETWEEN each column */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%); /* Centers the arrows vertically */
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 50%; /* Make the arrows round */
+            background-color: rgba(0, 0, 0, 0.5); /* Dark background for visibility */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px; /* Adjust the width */
+            height: 40px; /* Adjust the height */
+        }
+
+        .prev {
+            left: 10px; /* Position to the left of the slideshow */
+        }
+
+        .next {
+            right: 10px; /* Position to the right of the slideshow */
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8); /* Darken on hover */
+        }
+
+
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+            }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
+        @media only screen and (max-width: 300px) {
+            .prev, .next,.text {font-size: 11px}
+        }
+
+        .row {
+            margin: -1.5% 40px;
+        }
+
         .row,
         .row > .column {
-        padding: 15px;
+            padding: 15px;
         }
 
-        /* Create four equal columns that floats next to each other */
         .column {
-        float: left;
-        width: 25%;
+            float: left;
+            width: 25%;
         }
 
-        /* Clear floats after rows */ 
         .row:after {
-        content: "";
-        display: table;
-        clear: both;
+            content: "";
+            display: table;
+            clear: both;
         }
 
-        /* Content */
         .content {
-        background-color: white;
-        padding: 10px;
+            background-color: white;
+            padding: 10px;
+            border: 0.5px solid black;
         }
 
-        /* Responsive layout - makes a two column-layout instead of four columns */
         @media screen and (max-width: 900px) {
         .column {
             width: 50%;
         }
         }
 
-        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
         @media screen and (max-width: 600px) {
         .column {
             width: 100%;
         }
         }
+
+        .about-container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 20px 3%;
+            gap: 20px;
+        }
+
+        .about-container img {
+            border: 1px solid black;
+            border-radius: 8px;
+            width: 30%;
+        }
+
+        .about-text {
+            font-size: 0.95em;
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .line {
+            width: 28%;
+            height: 1.5px;
+            background: black;
+            margin: 3px auto;
+
+        }
+
+        .gabe-image {
+            width: 26%; /* Adjusted size */
+            position: absolute;
+            right: 8%; /* Moves it to the right with padding */
+            top: 368px; /* Adjusted to align with the title */
+            border: 1px solid black;
+            border-radius: 0%;
+        }
+
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px 0; /* Add padding around text */
+            display: flex;
+            justify-content: flex-start; /* Aligns footer content to the left */
+            align-items: center;
+            padding-left: 30px; /* Adjust the left padding */
+        }
+
+        footer p {
+            margin: 5px 0; /* Add spacing between footer lines */
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size: 16px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 13px;
+            margin-right: 10px; /* Space between links */
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+
+        footer img {
+            width: 50%
+        }
+
+        .row2 {
+            display: -ms-flexbox; /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap; /* IE10 */
+            flex-wrap: wrap;
+            padding: 0 8px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Create four equal columns that sits next to each other */
+        .column2 {
+            -ms-flex: 25%; /* IE10 */
+            flex: 25%;
+            max-width: 30%;
+            padding: 0 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .column2 img {
+            margin-top: 8px;
+            vertical-align: middle;
+            width: 60%;
+            border: 2px solid black; /* Narrow black border */
+            margin-bottom: 50px; /* Adds space between the images */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .centered-text {
+            width: 75%;  /* Adjust width as needed */
+            margin: auto; /* Centers the block horizontally */
+            text-align: center;
+                }
+                .navbar {
+            display: flex;
+            justify-content: center; /* Centers items horizontally */
+            align-items: center; /* Aligns items vertically */
+            overflow: hidden;
+        }
+
+        .navbar a {
+        float: left;
+        font-size: 14px;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        }
+
+        .dropdown {
+        float: left;
+        overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 14px;  
+        border: none;
+        outline: none;
+        color: rgb(0, 0, 0);
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+        }
+
+        .navbar a:hover, .dropdown:hover .dropbtn {
+        background-color: rgb(220, 220, 220);
+        }
+
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        }
+
+        .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        }
+
+        .dropdown-content a:hover {
+        background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+        display: block;
+        }
+
     </style>
 </head>
 
 <body>
 
-    <div class="header-container">
-        <div class="header-content">
-            <!-- Header content (e.g., logo or image) if needed -->
-        </div>
-    </div>
+    <br>
+    <br>
 
-    <br></br>
-
-    <!-- Title and subtitle aligned horizontally -->
     <div class="title-container">
-        <h1>TECH</h1>
+        <h1 style="font-size: 60px;"><b><a href="index.html" style="text-decoration: none; color: #000;">gliimpsse</a></b></h1>
     </div>
 
-    <!-- Navigation -->
-    <div class="nav">
-        <a href="index.html">HOME</a>
-        <a href="TECHME.html">TECH</a>
-        <a href="PHOTOGAL.html">GALLERY</a>
-        <a href="https://www.instagram.com/gliimpsse/">INSTAGRAM</a>
+    <div class="title-container">
+        <p style="font-size: 13px;"><b>PORTFOLIO BY GABRIEL MENGHISTEAB</b></p>
     </div>
 
+    <div class="line"></div>
+
+    <div class="navbar">
+        <div class="dropdown">
+          <button class="dropbtn"><b>PROJECTS</b> 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="TECHPAGE.html">TECH</a>
+            <a href="PHOTOGAL.html">PHOTOGRAPHY</a>
+          </div>
+        </div> 
+        <a href="BOOKINGS.html"><b>BOOKINGS</b></a>
+        <a href="ABOUTME.html"><b>ABOUT</b></a>
+      </div>
+
+    <br>
+
+    <div class="title-container">
+        <h2 style="font-size: 18px;font-family: serif;">GT EESA WEBSITE DISPLAY</h2>
+    </div>
+
+    <div class="title-container">
+        <h4 style="font-size: 15px; font-family: serif;">JUNE 18, 2024</h4>
+    </div>
+
+    <p style="font-size: 13.5px; padding-bottom: 1%;" class="centered-text">The main page dedicated to the Georgia Tech Eritrean-Ethiopian Student Organization, showcasing upcoming meetings, events, and info of the community. The site took roughly three weeks to code, and although the page remains unpublished, I wanted to display my work to showcase my early skills in HTML and CSS as well as my contributions to GT EESA.</p>
+
+    <br>
+    <br>
+
+    <div class="title-container">
+        <h2 style="font-size: 20px;font-family: serif;">WEBSITE</h2>
+    </div>
+
+    <iframe src="PROJECT.html" width="100%" height="500px"></iframe>
+
+    
     <br></br>
 
-    <h2 style="padding-left: 3%;">WEBSITES</h2>
-
-    <div class="row">
-        <div class="column">
-          <div class="content">
-            <h3>Georgia Tech EESA Display</h3>
-            <p>The main page dedicated to the Georgia Tech Eritrean-Ethiopian Student Organization, showcasing upcoming meetings, events, and info of the community.</p>
-            <p style="font-size: 13px;">May 27, 2024</p>
-          </div>
-        </div>
-    </div>
+    <footer>
+        <a href="https://www.instagram.com/gliimpsse/"><img src="IG.JPG"></a>
+        <a href="https://www.linkedin.com/in/gabrielmenghisteab/"><img src="LI.JPG"></a>
+        <a href="mailto:gabrielbmenghisteab05@gmail.com"><img src="EMAIL.JPG"></a>
+        <br></br>
+    </footer>
 
 </body>
 </html>

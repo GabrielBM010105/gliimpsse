@@ -1,463 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
-        body {
-            margin: 0;
-            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background-color: #FCF6F5;
-        }
+        body {margin: 0;}
 
-        .header-container {
-            display:flex;
-            justify-content: space-between;
-            align-items: center;
-            background-image: url('SKYLINE.JPG');
-            background-size:cover;
-            background-position: center;
-            height: 245px;
-            color: white;
-            padding: 0 30px;
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-        }
-
-        .gabe-image {
-            width: 25%;
-            margin-right: 20px;
-            border-radius: 8px;
-        }
-
-        .header-text {
-            font-size: 3em;
-            color: #fff;
-            margin: 0;
-        }
-
-        .right-text {
-            font-size: 1.5em;
-            color: #fff;
-            max-width: 500px;
-            font-weight: bold;
-        }
-
-        .title-container {
-            display: flex;
-            align-items: flex-end;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-        }
-
-        .title-container h1 {
-            font-size: 450%;
-            color: rgb(0, 0, 0);
-            margin: 0;
-            font-family:serif;
-            text-decoration: none;
-        }
-
-        .title-container h2 {
-            font-size: 1.5em;
-            color: rgb(0, 0, 0);
-        }
-
-        .title-container h3 {
-            font-size: 1.1em;
-            color: rgb(0, 0, 0);
-            margin: 0 0 13px 35px;
-        }
-
-        .nav {
-            display: flex;
-            gap: 60px;
-            margin-top: -10px;
-            font-size: 12px;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .nav a {
-            text-decoration: none;
-            color: #000000;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-
-        * {box-sizing: border-box}
-        .mySlides {display: none}
-        img {vertical-align: middle;}
-
-        .slideshow-container {
-            width: 55%; /* Adjust as needed */
-            margin: 0 auto;
-            text-align: center;
-            position: relative; /* This allows absolute positioning of arrows inside */
-            border: 1px solid black;
-        }
-
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%); /* Centers the arrows vertically */
-            padding: 16px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            border-radius: 50%; /* Make the arrows round */
-            background-color: rgba(0, 0, 0, 0.5); /* Dark background for visibility */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 40px; /* Adjust the width */
-            height: 40px; /* Adjust the height */
-        }
-
-        .prev {
-            left: 10px; /* Position to the left of the slideshow */
-        }
-
-        .next {
-            right: 10px; /* Position to the right of the slideshow */
-        }
-
-        .prev:hover, .next:hover {
-            background-color: rgba(0, 0, 0, 0.8); /* Darken on hover */
-        }
-
-
-        .text {
-            color: #f2f2f2;
-            font-size: 15px;
-            padding: 8px 12px;
-            position: absolute;
-            bottom: 8px;
+        .icon-bar {
             width: 100%;
-            text-align: center;
+            background-color:rgb(152, 148, 140);
+            overflow: auto;
         }
 
-        .numbertext {
-            color: #f2f2f2;
-            font-size: 12px;
-            padding: 8px 12px;
-            position: absolute;
-            top: 0;
-            }
-
-        .dot {
-            cursor: pointer;
-            height: 15px;
-            width: 15px;
-            margin: 0 2px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-        }
-
-        .active, .dot:hover {
-            background-color: #717171;
-        }
-
-        .fade {
-            animation-name: fade;
-            animation-duration: 1.5s;
-        }
-
-        @keyframes fade {
-            from {opacity: .4} 
-            to {opacity: 1}
-        }
-
-        @media only screen and (max-width: 300px) {
-            .prev, .next,.text {font-size: 11px}
-        }
-
-        .row {
-            margin: -1.5% 40px;
-        }
-
-        .row,
-        .row > .column {
-            padding: 15px;
-        }
-
-        .column {
+        .icon-bar a {
             float: left;
-            width: 25%;
-        }
-
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-
-        .content {
-            background-color: white;
-            padding: 10px;
-            border: 0.5px solid black;
-        }
-
-        @media screen and (max-width: 900px) {
-        .column {
-            width: 50%;
-        }
-        }
-
-        @media screen and (max-width: 600px) {
-        .column {
-            width: 100%;
-        }
-        }
-
-        .about-container {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            padding: 20px 3%;
-            gap: 20px;
-        }
-
-        .about-container img {
-            border: 1px solid black;
-            border-radius: 8px;
-            width: 30%;
-        }
-
-        .about-text {
-            font-size: 0.95em;
-            line-height: 1.6;
-            flex: 1;
-        }
-
-        .line {
-            width: 28%;
-            height: 1.5px;
-            background: black;
-            margin: 3px auto;
-
-        }
-
-        .gabe-image {
-            width: 26%; /* Adjusted size */
-            position: absolute;
-            right: 8%; /* Moves it to the right with padding */
-            top: 368px; /* Adjusted to align with the title */
-            border: 1px solid black;
-            border-radius: 0%;
-        }
-
-        footer {
-            background-color: #000000;
-            color: #ffffff;
-            padding: 20px 0; /* Add padding around text */
-            display: flex;
-            justify-content: flex-start; /* Aligns footer content to the left */
-            align-items: center;
-            padding-left: 30px; /* Adjust the left padding */
-        }
-
-        footer p {
-            margin: 5px 0; /* Add spacing between footer lines */
-            font-family:Georgia, 'Times New Roman', Times, serif;
-            font-size: 16px;
-        }
-
-        footer a {
-            text-decoration: none;
-            color: #ffffff;
-            font-size: 13px;
-            margin-right: 10px; /* Space between links */
-            font-family:Georgia, 'Times New Roman', Times, serif;
-        }
-
-        footer img {
-            width: 50%
-        }
-
-        .row2 {
-            display: -ms-flexbox; /* IE10 */
-            display: flex;
-            -ms-flex-wrap: wrap; /* IE10 */
-            flex-wrap: wrap;
-            padding: 0 8px;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Create four equal columns that sits next to each other */
-        .column2 {
-            -ms-flex: 25%; /* IE10 */
-            flex: 25%;
-            max-width: 28%;
-            padding: 0 20px;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .column2 img {
-            margin-top: 8px;
-            vertical-align: middle;
-            width: 60%;
-            border: 2px solid black; /* Narrow black border */
-            margin-bottom: 50px; /* Adds space between the images */
-            justify-content: center;
-            align-items: center;
-        }
-
-        .centered-text {
-            width: 75%;  /* Adjust width as needed */
-            margin: auto; /* Centers the block horizontally */
+            width: 20%;
             text-align: center;
-                }
-                .navbar {
-            display: flex;
-            justify-content: center; /* Centers items horizontally */
-            align-items: center; /* Aligns items vertically */
-            overflow: hidden;
+            padding: 12px 0;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 36px;
         }
 
-        .navbar a {
-        float: left;
-        font-size: 14px;
-        color: rgb(0, 0, 0);
-        text-align: center;
-        padding: 14px 20px;
-        text-decoration: none;
+        .icon-bar a:hover {
+            background-color: rgb(42, 43, 43);
         }
 
-        .dropdown {
-        float: left;
-        overflow: hidden;
+        .active {
+            background-color: rgb(179, 177, 177);
         }
 
-        .dropdown .dropbtn {
-            font-size: 14px;  
-        border: none;
-        outline: none;
-        color: rgb(0, 0, 0);
-        padding: 14px 16px;
-        background-color: inherit;
-        font-family: inherit;
-        margin: 0;
+        body {
+          background-color:rgb(243, 237, 228)
         }
 
-        .navbar a:hover, .dropdown:hover .dropbtn {
-        background-color: rgb(220, 220, 220);
-        }
-
-        .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-        }
-
-        .dropdown-content a {
-        float: none;
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-        }
-
-        .dropdown-content a:hover {
-        background-color: #ddd;
-        }
-
-        .dropdown:hover .dropdown-content {
-        display: block;
+        img-a {
+            border-radius: 50%;
         }
 
     </style>
-</head>
 
-<body>
-
-    <br>
-    <br>
-
-    <div class="title-container">
-        <h1 style="font-size: 60px;"><b><a href="index.html" style="text-decoration: none; color: #000;">gliimpsse</a></b></h1>
-    </div>
-
-    <div class="title-container">
-        <p style="font-size: 13px;"><b>PORTFOLIO BY GABRIEL MENGHISTEAB</b></p>
-    </div>
-
-    <div class="line"></div>
-
-    <div class="navbar">
-        <div class="dropdown">
-          <button class="dropbtn"><b>PROJECTS</b> 
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-content">
-            <a href="TECHPAGE.html">TECH</a>
-            <a href="PHOTOGAL.html">PHOTOGRAPHY</a>
-          </div>
-        </div> 
-        <a href="BOOKINGS.html"><b>BOOKINGS</b></a>
-        <a href="ABOUTME.html"><b>ABOUT</b></a>
-      </div>
-
-    <br>
-
-
-    <div class="title-container">
-        <h2 style="font-size: 18px;font-family: serif;">GT EESA SOCCER TOURNAMENT</h2>
-    </div>
-
-    <div class="title-container">
-        <h4 style="font-size: 15px; font-family: serif;">APRIL 20, 2024</h4>
-    </div>
-
-    <p style="font-size: 13.5px; padding-bottom: 1%;" class="centered-text">A collection of photos from the Georgia Tech EESA Soccer Tournament, capturing the excitement, teamwork, and friendly competition among participants. These images showcase the energy and community spirit of the Eritrean and Ethiopian Student Association as they come together for a day of sports and celebration.</p>
-
-    <br>
-    <br>
-
-            <!-- Photo Grid -->
-    <div class="row2"> 
-        <div class="column2">
-        <img src="S4-2.jpg" style="width:100%">
-        <img src="S3-2.jpg" style="width:100%">
-        <img src="S5-2.jpg" style="width:100%">
-        <img src="S6-2.jpg" style="width:100%">
+        <div class="icon-bar">
+            <a href="PROJECT.html"><i class="fa fa-home"></i></a></a>
+            <a href="ABOUTUS.html"><i class="fa fa-users"></i></a></a>
+            <a href="PHOTOS.html"><i class="fa fa-photo"></i></a></a>
+            <a href="EVENTS.html"><i class="fa fa-calendar-o"></i></a></a>
+            <a href="INFO.html"><i class="fa fa-info"></i></a></a>
         </div>
-        <div class="column2">
-        <img src="S7-2.jpg" style="width:100%">
-        <img src="S8-2.jpg" style="width:100%">
-        <img src="S10-2.jpg" style="width:100%">
-        <img src="S11-2.jpg" style="width:100%">
-        </div>  
-        <div class="column2">
-        <img src="S12-2.jpg" style="width:100%">
-        <img src="S14-2.jpg" style="width:100%">
-        <img src="S2-2.jpg" style="width:100%">
-        <img src="1616-2.jpg" style="width:100%">
-        </div>
-    </div>
 
-    <br></br>
+    <header>
 
-    <footer>
-        <a href="https://www.instagram.com/gliimpsse/"><img src="IG.JPG"></a>
-        <a href="https://www.linkedin.com/in/gabrielmenghisteab/"><img src="LI.JPG"></a>
-        <a href="mailto:gabrielbmenghisteab05@gmail.com"><img src="EMAIL.JPG"></a>
-        <br></br>
-    </footer>
+        <header style="background-color: rgb(190, 185, 175); padding-bottom: 40px; padding-top: 0.1px;">
 
-</body>
+            <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 70px; margin-left: 110px;">Soccer Tournament</h1>
+    
+    </header>
+
+    <style>
+        div.gallery {
+          border: 1px solid #ccc;
+        }
+        
+        div.gallery:hover {
+          border: 1px solid #777;
+        }
+        
+        div.gallery img {
+          width: 100%;
+          height: auto;
+        }
+        
+        div.desc {
+          padding: 15px;
+          text-align: center;
+        }
+        
+        * {
+          box-sizing: border-box;
+        }
+        
+        .responsive {
+          padding: 0 6px;
+          float: left;
+          width: 24.99999%;
+        }
+        
+        @media only screen and (max-width: 700px) {
+          .responsive {
+            width: 49.99999%;
+            margin: 6px 0;
+          }
+        }
+        
+        @media only screen and (max-width: 500px) {
+          .responsive {
+            width: 100%;
+          }
+        }
+        
+        .clearfix:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        </style>
+        </head>
+      <body>
+
+          <br></br>
+
+
+
+        <style>
+          div.gallery {
+            border: 1px solid #ccc;
+          }
+          
+          div.gallery:hover {
+            border: 1px solid #777;
+          }
+          
+          div.gallery img {
+            width: 100%;
+            height: auto;
+          }
+          
+          div.desc {
+            padding: 15px;
+            text-align: center;
+          }
+          
+          * {
+            box-sizing: border-box;
+          }
+          
+          .responsive {
+            padding: 0 6px;
+            float: left;
+            width: 24.99999%;
+          }
+          
+          @media only screen and (max-width: 700px) {
+            .responsive {
+              width: 49.99999%;
+              margin: 6px 0;
+            }
+          }
+          
+          @media only screen and (max-width: 500px) {
+            .responsive {
+              width: 100%;
+            }
+          }
+          
+          .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+          }
+          </style>
+          </head>
+          <body>
+          
+          <div class="clearfix"></div>
+          
+          </body>
 </html>

@@ -2,360 +2,462 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
+    <style>
         body {
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            font-family: 'Arial Rounded MT Bold', 'Arial', sans-serif;
-            background-color: #ebe9e1;
-            /*background: linear-gradient(to bottom, #ebe9e1, #e8e7e6);*/
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #FCF6F5;
         }
 
-        .navbar {
-            overflow: hidden;
-            background-color: #333;
-            position: fixed;
-            top: 0;
-            width: 100%;
-        }
-
-        .navbar a {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-        }
-
-        .navbar a:hover {
-            background: #ddd;
-            color: black;
-        }
-
-        .main {
-            flex: 1;
-            padding: 16px;
-            margin-top: 60px; /* Adjusted margin to account for navbar */
-        }
-
-        .line {
-            display: flex;
+        .header-container {
+            display:flex;
             justify-content: space-between;
-            align-items: flex-start;
-            padding: 10px 0; /* Reduced padding to minimize space */
+            align-items: center;
+            background-image: url('SKYLINE.JPG');
+            background-size:cover;
+            background-position: center;
+            height: 245px;
+            color: white;
+            padding: 0 30px;
         }
 
-        .left {
-            text-align: left;
-            padding-left: 30px;
-            flex: 1;
-        }
-
-        .right {
+        .header-content {
             display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .gabe-image {
+            width: 25%;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+
+        .header-text {
+            font-size: 3em;
+            color: #fff;
+            margin: 0;
+        }
+
+        .right-text {
+            font-size: 1.5em;
+            color: #fff;
+            max-width: 500px;
+            font-weight: bold;
+        }
+
+        .title-container {
+            display: flex;
+            align-items: flex-end;
+            align-items: center;
             justify-content: center;
-            align-items: flex-start;
-            flex-basis: 60%; /* Set the width of the image container */
+            text-decoration: none;
         }
 
-        .right img {
-            max-width: 90%;
-            height: auto;
-            margin-right: 10%;
-            margin-top: 3%;
-            border: 1px solid #333;
-        }
-
-        .left p {
-            margin: 5px 0; /* Reduced margins to decrease space between paragraphs */
-        }
-
-        hr {
-            border: 0;
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.4), transparent);
-            margin: 20px 0; /* Adds some spacing above and below the line */
-        }
-
-        footer {
-            background: linear-gradient(to left, #f95ca4, #ed7845);
+        .title-container h1 {
+            font-size: 450%;
             color: rgb(0, 0, 0);
-            text-align: center;
-            padding: 10px 0;
-            position: relative;
-            width: 100%;
-            bottom: 0;
+            margin: 0;
+            font-family:serif;
+            text-decoration: none;
+        }
+
+        .title-container h2 {
+            font-size: 1.5em;
+            color: rgb(0, 0, 0);
+        }
+
+        .title-container h3 {
+            font-size: 1.1em;
+            color: rgb(0, 0, 0);
+            margin: 0 0 13px 35px;
         }
 
         .nav {
             display: flex;
-            justify-content: center; /* Centers the links horizontally */
+            gap: 60px;
+            margin-top: -10px;
+            font-size: 12px;
             align-items: center;
-            margin-bottom: 20px;
+            justify-content: center;
         }
 
-        .nav h3 {
-            margin: 0 23px; /* Adds space between the headers */
+        .nav a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        * {box-sizing: border-box}
+        .mySlides {display: none}
+        img {vertical-align: middle;}
+
+        .slideshow-container {
+            width: 55%; /* Adjust as needed */
+            margin: 0 auto;
+            text-align: center;
+            position: relative; /* This allows absolute positioning of arrows inside */
+            border: 1px solid black;
+        }
+
+        .prev, .next {
             cursor: pointer;
-        }
-
-        /* Apply gradient to the h1 text */
-        h1 {
-            font-size: 500%;
-            margin-left: 5%;
-            background: linear-gradient(to bottom, #f95ca4, #ed7845); /* Gradient from light to normal pink */
-            -webkit-background-clip: text;
-            color: transparent; /* Set the text color to transparent to allow background-clip to work */
-        }
-
-        .header-container {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%); /* Centers the arrows vertically */
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 50%; /* Make the arrows round */
+            background-color: rgba(0, 0, 0, 0.5); /* Dark background for visibility */
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            padding: 0 30px; /* Add padding to prevent the search bar from touching the edge */
+            width: 40px; /* Adjust the width */
+            height: 40px; /* Adjust the height */
         }
 
-/* Top navigation acting as a header */
-.sidenav {
-    height: auto; /* Auto height to fit content */
-    width: 100%; /* Full width */
-    position: fixed; /* Fixed positioning at the top */
-    top: 0; /* Positioned at the very top */
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    padding: 10px 0; /* Vertical padding */
-    display: flex;
-    justify-content: space-around; /* Space items horizontally */
-    align-items: center; /* Center items vertically */
-    z-index: 1000; /* Make sure it's on top of other content */
-}
-
-/* Sidebar links */
-.sidenav a {
-    text-decoration: none;
-    font-size: 15px;
-    color: #818181;
-    display: block;
-    text-align: center;
-    padding: 10px;
-}
-
-/* Hover effect for sidebar links */
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-/* Ensure the rest of the page is not covered by top navigation */
-body {
-    padding-top: 60px; /* Adjust based on sidebar height */
-}
-
-
-
-
-        @media screen and (max-height: 450px) {
-            .sidenav {
-                padding-top: 15px;
-            }
-
-            .sidenav a {
-                font-size: 18px;
-            }
+        .prev {
+            left: 10px; /* Position to the left of the slideshow */
         }
 
-            /* Center website */
-    .main {
-    max-width: 1000px;
-    margin: auto;
-    }
+        .next {
+            right: 10px; /* Position to the right of the slideshow */
+        }
 
-    .row {
-    margin: 2px 40px;
-    }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8); /* Darken on hover */
+        }
 
-    /* Add padding BETWEEN each column */
-    .row,
-    .row > .column {
-    padding: 15px;
-    }
 
-    /* Create four equal columns that floats next to each other */
-    .column {
-    float: left;
-    width: 25%;
-    }
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
 
-    /* Clear floats after rows */ 
-    .row:after {
-    content: "";
-    display: table;
-    clear: both;
-    }
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+            }
 
-    /* Content */
-    .content {
-    background-color: white;
-    padding: 10px;
-    }
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
 
-    /* Responsive layout - makes a two column-layout instead of four columns */
-    @media screen and (max-width: 10000px) {
-    .column {
-        width: 50%;
-    }
-    }
+        .active, .dot:hover {
+            background-color: #717171;
+        }
 
-        /* Center website */
-    .main {
-    max-width: 1000px;
-    margin: auto;
-    }
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
 
-    * {
-  box-sizing: border-box;
-}
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
 
-.header {
-  text-align: center;
-  padding: 32px;
-}
+        @media only screen and (max-width: 300px) {
+            .prev, .next,.text {font-size: 11px}
+        }
 
-.row2 {
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-  padding: 0 8px;
-  padding-left: 32px;
-}
+        .row {
+            margin: -1.5% 40px;
+        }
 
-/* Create four equal columns that sits next to each other */
-.column2 {
-  -ms-flex: 25%; /* IE10 */
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 20px;
-}
+        .row,
+        .row > .column {
+            padding: 15px;
+        }
 
-.column2 img {
-        margin-top: 8px;
-        vertical-align: middle;
-        width: 100%;
-        border: 2px solid black; /* Narrow black border */
-        margin-bottom: 10px; /* Adds space between the images */
-    }
+        .column {
+            float: left;
+            width: 25%;
+        }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 9000px) {
-  .column {
-    -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
-  }
-}
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
-  }
-}
-</style>
+        .content {
+            background-color: white;
+            padding: 10px;
+            border: 0.5px solid black;
+        }
+
+        @media screen and (max-width: 900px) {
+        .column {
+            width: 50%;
+        }
+        }
+
+        @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+        }
+        }
+
+        .about-container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 20px 3%;
+            gap: 20px;
+        }
+
+        .about-container img {
+            border: 1px solid black;
+            border-radius: 8px;
+            width: 30%;
+        }
+
+        .about-text {
+            font-size: 0.95em;
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .line {
+            width: 28%;
+            height: 1.5px;
+            background: black;
+            margin: 3px auto;
+
+        }
+
+        .gabe-image {
+            width: 26%; /* Adjusted size */
+            position: absolute;
+            right: 8%; /* Moves it to the right with padding */
+            top: 368px; /* Adjusted to align with the title */
+            border: 1px solid black;
+            border-radius: 0%;
+        }
+
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px 0; /* Add padding around text */
+            display: flex;
+            justify-content: flex-start; /* Aligns footer content to the left */
+            align-items: center;
+            padding-left: 30px; /* Adjust the left padding */
+        }
+
+        footer p {
+            margin: 5px 0; /* Add spacing between footer lines */
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-size: 16px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 13px;
+            margin-right: 10px; /* Space between links */
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+
+        footer img {
+            width: 50%
+        }
+
+        .row2 {
+            display: -ms-flexbox; /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap; /* IE10 */
+            flex-wrap: wrap;
+            padding: 0 8px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Create four equal columns that sits next to each other */
+        .column2 {
+            -ms-flex: 25%; /* IE10 */
+            flex: 25%;
+            max-width: 28%;
+            padding: 0 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .column2 img {
+            margin-top: 8px;
+            vertical-align: middle;
+            width: 60%;
+            border: 2px solid black; /* Narrow black border */
+            margin-bottom: 50px; /* Adds space between the images */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .centered-text {
+            width: 75%;  /* Adjust width as needed */
+            margin: auto; /* Centers the block horizontally */
+            text-align: center;
+                }
+                .navbar {
+            display: flex;
+            justify-content: center; /* Centers items horizontally */
+            align-items: center; /* Aligns items vertically */
+            overflow: hidden;
+        }
+
+        .navbar a {
+        float: left;
+        font-size: 14px;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        }
+
+        .dropdown {
+        float: left;
+        overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 14px;  
+        border: none;
+        outline: none;
+        color: rgb(0, 0, 0);
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+        }
+
+        .navbar a:hover, .dropdown:hover .dropbtn {
+        background-color: rgb(220, 220, 220);
+        }
+
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        }
+
+        .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        }
+
+        .dropdown-content a:hover {
+        background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+        display: block;
+        }
+
+    </style>
 </head>
 
-</head>
 <body>
 
-    <h1>icmForUs</h1>
+    <br>
+    <br>
 
-    <div class="header-container">
-        <!-- Navigation -->
-        <div class="nav">
-            <h3><a href="NEWDESIGN.html" style="text-decoration: none; color: #000000;">NEWS</a></h3>
-            <h3><a href="TECHME.html" style="text-decoration: none; color: #000000;">TECH</a></h3>
-            <h3><a href="PHOTOGAL.html" style="text-decoration: none; color: #000000;">PORTFOLIO</a></h3>
-            <h3><a href="BOOKINGS.html" style="text-decoration: none; color: #000000;">BOOKINGS</a></h3>
+    <div class="title-container">
+        <h1 style="font-size: 60px;"><b><a href="index.html" style="text-decoration: none; color: #000;">gliimpsse</a></b></h1>
+    </div>
+
+    <div class="title-container">
+        <p style="font-size: 13px;"><b>PORTFOLIO BY GABRIEL MENGHISTEAB</b></p>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="navbar">
+        <div class="dropdown">
+          <button class="dropbtn"><b>PROJECTS</b> 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="TECHPAGE.html">TECH</a>
+            <a href="PHOTOGAL.html">PHOTOGRAPHY</a>
+          </div>
+        </div> 
+        <a href="BOOKINGS.html"><b>BOOKINGS</b></a>
+        <a href="ABOUTME.html"><b>ABOUT</b></a>
+      </div>
+
+    <br>
+
+
+    <div class="title-container">
+        <h2 style="font-size: 20px;font-family: serif;">RCA CAR SHOW</h2>
+    </div>
+
+    <div class="title-container">
+        <h4 style="font-size: 15px; font-family: serif;">MAY 10, 2024</h4>
+    </div>
+
+    <p style="font-size: 13.5px; padding-bottom: 1%;" class="centered-text">A gallery capturing the 2024 annual car show at Rockdale Career Academy in Conyers, Rockdale County, GA. The event featured a diverse array of vehicles, from classic cars to modern exotics, drawing enthusiasts and community members alike. The show included live demonstrations, awards for best in class, and opportunities for attendees to interact with car owners and learn more about the automotive industry. The gallery highlights the vibrant atmosphere, showcasing the detailed craftsmanship of the cars and the excitement of the crowd. Pictures taken by my brother Daniel Menghisteab and I. Pictures edited by me with Lightroom.</p>
+
+    <br>
+    <br>
+
+            <!-- Photo Grid -->
+    <div class="row2"> 
+        <div class="column2">
+        <img src="6-2.jpg" style="width:100%">
+        <img src="9-2.jpg" style="width:100%">
+        <img src="13-2.jpg" style="width:100%">
+        <img src="16-2.jpg" style="width:100%">
         </div>
-         
+        <div class="column2">
+        <img src="2-2.jpg" style="width:100%">
+        <img src="7-2.jpg" style="width:100%">
+        <img src="10-2.jpg" style="width:100%">
+        <img src="14-2.jpg" style="width:100%">
+        </div>  
+        <div class="column2">
+        <img src="4-2.jpg" style="width:100%">
+        <img src="8-2.jpg" style="width:100%">
+        <img src="12-2.JPG" style="width:100%">
+        <img src="15-2.jpg" style="width:100%">
+        </div>
     </div>
 
-    <div class="sidenav">
-        <a href="index.html">Home</a>
-        <a href="CONTACTME2.html">About</a>
-        <a href="CONTACTMEE.html">Contact</a>
-        <a href="https://www.instagram.com/icmforus/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://x.com/icmforus" target="_blank"><i class="fa-brands fa-x-twitter"></i></i></a>
-        <a href="https://www.youtube.com/@icmForUs" target="_blank"><i class="fab fa-youtube"></i></a>
-    </div>
+    <br></br>
 
-    <h1 style="font-size: 30px; color: #000000;">RCA Car Show</h1>
-    <p style="font-size: 16px; padding-left: 73px;">May 12, 2024</p></a>
-
-    <!-- Portfolio Gallery Grid -->
-    <div class="row">
-        <div class="column">
-          <div class="content">
-            <h3>About The Event</h3>
-            <p style="font-size: 15px;">The 2024 Annual Car Show at the Rockdale Career Academy in Conyers, Rockdale County, GA featured a diverse array of vehicles, from classic cars to modern exotics. </p>
-            <p style="font-size: 15px;">The event drew enthusiasts and community members alike and included live demonstrations and opportunities for attendees to interact with car owners and learn more about the automotive industry. </p>
-            <p style="font-size: 15px;">The gallery highlights the vibrant atmosphere, showcasing the detailed craftsmanship of the cars and the excitement of the crowd.</p>
-          
-            <h3>Credits</h3>
-            <p style="font-size: 15px;">Daniel Menghisteab</p>
-              
-      </div>
-      <!-- END GRID -->
-      </div>
-      
-      <!-- END MAIN -->
-      </div>
-
-    <body>
-        
-        <!-- Photo Grid -->
-<div class="row2"> 
-    <div class="column2">
-      <img src="1.JPG" style="width:100%">
-      <img src="4.JPG" style="width:100%">
-      <img src="7.JPG" style="width:100%">
-      <img src="10.JPG" style="width:100%">
-      <img src="13.JPG" style="width:100%">
-      <img src="16.JPG" style="width:100%">
-    </div>
-    <div class="column2">
-      <img src="2.JPG" style="width:100%">
-      <img src="5.JPG" style="width:100%">
-      <img src="8.JPG" style="width:100%">
-      <img src="11.JPG" style="width:100%">
-      <img src="14.JPG" style="width:100%">
-    </div>  
-    <div class="column2">
-      <img src="3.JPG" style="width:100%">
-      <img src="6.JPG" style="width:100%">
-      <img src="9.JPG" style="width:100%">
-      <img src="12.JPG" style="width:100%">
-      <img src="15.JPG" style="width:100%">
-    </div>
-  </div>
-  
-        
-        </body>
-
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-            /* Your existing styles */
-        </style>
-        <script src="https://kit.fontawesome.com/7541ffbdd1.js" crossorigin="anonymous"></script>
-    </head>
-    
+    <footer>
+        <a href="https://www.instagram.com/gliimpsse/"><img src="IG.JPG"></a>
+        <a href="https://www.linkedin.com/in/gabrielmenghisteab/"><img src="LI.JPG"></a>
+        <a href="mailto:gabrielbmenghisteab05@gmail.com"><img src="EMAIL.JPG"></a>
+        <br></br>
+    </footer>
 
 </body>
 </html>

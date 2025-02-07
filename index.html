@@ -239,10 +239,10 @@
         }
 
         .line {
-            width: 30%;
+            width: 28%;
             height: 1.5px;
             background: black;
-            margin: 8px auto;
+            margin: 3px auto;
 
         }
 
@@ -283,6 +283,80 @@
             width: 50%
         }
 
+        .navbar {
+            display: flex;
+            justify-content: center; /* Centers items horizontally */
+            align-items: center; /* Aligns items vertically */
+            overflow: hidden;
+        }
+
+        .navbar a {
+        float: left;
+        font-size: 14px;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        }
+
+        .dropdown {
+        float: left;
+        overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 14px;  
+        border: none;
+        outline: none;
+        color: rgb(0, 0, 0);
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+        }
+
+        .navbar a:hover, .dropdown:hover .dropbtn {
+        background-color: rgb(220, 220, 220);
+        }
+
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        }
+
+        .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        }
+
+        .dropdown-content a:hover {
+        background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+        display: block;
+        }
+
+        .centered-text {
+            width: 75%;  /* Adjust width as needed */
+            margin: auto; /* Centers the block horizontally */
+            text-align: center;
+                }
+                .navbar {
+            display: flex;
+            justify-content: center; /* Centers items horizontally */
+            align-items: center; /* Aligns items vertically */
+            overflow: hidden;
+        }
+
     </style>
 </head>
 
@@ -292,28 +366,33 @@
     <br>
 
     <div class="title-container">
-        <h1 style="font-size: 60px;"><b><a href="https://gliimpsse.com/" style="text-decoration: none; color: #000;">gliimpsse</a></b></h1>
+        <h1 style="font-size: 60px;"><b><a href="index.html" style="text-decoration: none; color: #000;">gliimpsse</a></b></h1>
     </div>
 
     <div class="title-container">
         <p style="font-size: 13px;"><b>PORTFOLIO BY GABRIEL MENGHISTEAB</b></p>
     </div>
 
-    <br>
-    <br>
-
-    <div class="nav">
-        <a href="TECHME.html">PROJECTS</a>
-        <a href="PHOTOGAL.html">BOOKINGS</a>
-        <a href="PHOTOGAL.html">ABOUT</a>
-    </div>
-
     <div class="line"></div>
+
+    <div class="navbar">
+        <div class="dropdown">
+          <button class="dropbtn"><b>PROJECTS</b> 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="TECHPAGE.html">TECH</a>
+            <a href="PHOTOGAL.html">PHOTOGRAPHY</a>
+          </div>
+        </div> 
+        <a href="BOOKINGS.html"><b>BOOKINGS</b></a>
+        <a href="ABOUTME.html"><b>ABOUT</b></a>
+      </div>
 
     <br>
 
     <div class="title-container">
-        <h2>NEWS</h2>
+        <h2 style="font-family: serif; font-size: 20px;">HOME</h2>
     </div>
 
     <div class="slideshow-container">
@@ -367,13 +446,13 @@
     <br><br>
 
     <div class="title-container">
-        <h2>RECENT PROJECTS</h2>
+        <h2 style="font-family: serif; font-size: 20px;">RECENT PROJECTS</h2>
     </div>
 
     <div class="row">
         <div class="column">
             <div class="content">
-              <a href="EESAPHOTOSHOOT.html" style="text-decoration: none; color: #000000;"><img src="EESAEESA.JPG" alt="Mountains" style="width:100%">
+              <a href="EESAPHOTOSHOOT.html" style="text-decoration: none; color: #000000;"><img src="G3.JPG" alt="Mountains" style="width:100%">
               <h3>Georgia Tech EESA Photoshoot</h3>
               <p>A photoshoot showcasing all the eBoard members of the Georgia Tech Eritrean-Ethiopian Student Association.</p>
               <p style="font-size: 13px;">September 15, 2024</p></a>
@@ -381,7 +460,7 @@
           </div>
       <div class="column">
         <div class="content">
-          <a href="WASHINGTON.html" style="text-decoration: none; color: #000000;"><img src="DCC2.JPG" alt="Mountains" style="width:100%">
+          <a href="WASHINGTON.html" style="text-decoration: none; color: #000000;"><img src="DC-2.jpg" alt="Mountains" style="width:100%">
           <h3>Washington Gallery</h3>
           <p>A gallery of photos taken in Washington, DC, featuring a mix of urban nature scenes and portraits.</p>
           <p style="font-size: 13px;">July 26, 2024</p></a>
@@ -389,7 +468,7 @@
       </div>
       <div class="column">
         <div class="content">
-          <a href="WASHINGTON.html" style="text-decoration: none; color: #000000;"><img src="EESASS.JPG" alt="Mountains" style="width:100%">
+          <a href="TECHME.html" style="text-decoration: none; color: #000000;"><img src="EESASS.JPG" alt="Mountains" style="width:100%">
           <h3>GT EESA Website Display</h3>
           <p>An unpublished main page dedicated to the Georgia Tech Eritrean-Ethiopian Student Organization, showcasing upcoming meetings, events, and info of the community.</p>
           <p style="font-size: 13px;">June 18, 2024</p></a>
@@ -397,7 +476,7 @@
       </div>
       <div class="column">
         <div class="content">
-          <a href="WASHINGTON.html" style="text-decoration: none; color: #000000;"><img src="13.JPG" alt="Mountains" style="width:100%">
+          <a href="RCACARSHOW.html" style="text-decoration: none; color: #000000;"><img src="13-2.jpg" alt="Mountains" style="width:100%">
           <h3>RCA Car Show</h3>
           <p>The 2024 Annual Car Show at the Rockdale Career Academy in Conyers, Rockdale County, GA featured a diverse array of vehicles, from classic cars to modern exotics.</p>
           <p style="font-size: 13px;">May 10, 2024</p></a>
@@ -408,9 +487,12 @@
     <br><br>
 
     <div class="title-container">
-        <h2>ABOUT</h2>
+        <h2 style="font-family: serif; font-size: 20px;">ABOUT <i>gliimpsse</i></h2>
     </div>
 
+    <p style="font-size: 15px; padding-bottom: 1%;" class="centered-text"><i>gliimpsse</i> is a personal portfolio website showcasing my journey as a second-year Computer Science major. It highlights my skills, projects, and interests, combining my passion for media design, software development, and photography. The site serves as a hub for my CS projects, reflecting my technical growth and creativity, while also featuring my photography work, where I offer bookings for photoshoots. Through this platform, I aim to elevate my presence in both fields, connecting with opportunities for internships, jobs, and creative collaborations. Whether you're looking to explore my coding projects or book a photoshoot, gliimpsse offers a glimpse into my evolving work.</p>
+
+    <br></br>
     <br></br>
 
     <footer>
